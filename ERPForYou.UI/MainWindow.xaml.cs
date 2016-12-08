@@ -24,19 +24,31 @@ namespace ERPForYou.UI
         {
             InitializeComponent();
         }
+        BrushConverter bc = new BrushConverter();
 
-        private void HamburgerButton_Click(object sender, RoutedEventArgs e)
+        private void receiptNav_MouseEnter(object sender, MouseEventArgs e)
         {
-            if (sideBar.IsVisible)
-            {
-                sideBar.Visibility = Visibility.Hidden;
-                HamburgerButton.Margin = new Thickness(15, 0, 0, 0);
-            }
-            else
-            {
-                sideBar.Visibility = Visibility.Visible;
-                HamburgerButton.Margin = new Thickness(193, 0, 0, 0);
-            }           
+            receiptNav.Background = (Brush)bc.ConvertFrom("#ff0d1630");
+        }
+
+        private void receiptNav_MouseLeave(object sender, MouseEventArgs e)
+        {
+            receiptNav.Background = (Brush)bc.ConvertFrom("#FF14263B");
+        }
+
+        private void expenditureNav_MouseEnter(object sender, MouseEventArgs e)
+        {
+            expenditureNav.Background = (Brush)bc.ConvertFrom("#ff0d1630");
+        }
+
+        private void expenditureNav_MouseLeave(object sender, MouseEventArgs e)
+        {
+            expenditureNav.Background = (Brush)bc.ConvertFrom("#FF14263B");
+        }
+
+        private void receiptNav_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            mainFrame.NavigationService.Navigate(new Uri("ReceiptPage.xaml", UriKind.Relative));
         }
     }
 }
