@@ -50,5 +50,25 @@ namespace ERPForYou.UI
         {
             mainFrame.NavigationService.Navigate(new Uri("ReceiptPage.xaml", UriKind.Relative));
         }
+
+        private void expenditureNav_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            mainFrame.NavigationService.Navigate(new Uri("ExpenditurePage.xaml", UriKind.Relative));
+        }
+
+        private void remainderNav_MouseEnter(object sender, MouseEventArgs e)
+        {
+            remainderNav.Background = (Brush)bc.ConvertFrom("#ff0d1630");
+        }
+
+        private void remainderNav_MouseLeave(object sender, MouseEventArgs e)
+        {
+            remainderNav.Background = (Brush)bc.ConvertFrom("#FF14263B");
+        }
+
+        private void remainderNav_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            mainFrame.NavigationService.Navigate(new Uri("RemainderPage.xaml", UriKind.Relative));
+        }
     }
 }

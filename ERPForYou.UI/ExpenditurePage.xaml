@@ -1,0 +1,22 @@
+﻿<Page x:Class="ERPForYou.UI.ExpenditurePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ERPForYou.UI"
+      mc:Ignorable="d" 
+       d:DesignHeight="472" d:DesignWidth="718"
+      Title="ExpenditurePage" Background="White" ShowsNavigationUI="False">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="65"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Label x:Name="expTableLable" Content="Таблица расхода" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Height="32" Width="137" Margin="10,4,0,0"/>
+        <DataGrid x:Name="expTable" Margin="10,5" Grid.Row="1"/>
+        <Button x:Name="newExpButton" Content="Новый заказ" Margin="10,0,0,11" Grid.Row="2" FontSize="16" Height="45" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="284" Click="newExpButton_Click"/>
+
+    </Grid>
+</Page>

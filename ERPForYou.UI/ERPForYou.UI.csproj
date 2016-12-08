@@ -55,12 +55,22 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ExpenditurePage.xaml.cs">
+      <DependentUpon>ExpenditurePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="NewReceiptForm.xaml.cs">
       <DependentUpon>NewReceiptForm.xaml</DependentUpon>
     </Compile>
     <Compile Include="ReceiptPage.xaml.cs">
       <DependentUpon>ReceiptPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="RemainderPage.xaml.cs">
+      <DependentUpon>RemainderPage.xaml</DependentUpon>
+    </Compile>
+    <Page Include="ExpenditurePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -78,6 +88,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ReceiptPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RemainderPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -108,6 +122,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icons\warehouse.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -32,7 +32,11 @@ C:\Users\mvideo\GitHub\ERPForYou2\ERPForYou.UI\obj\Debug\MainWindow.baml
 C:\Users\mvideo\GitHub\ERPForYou2\ERPForYou.UI\obj\Debug\ERPForYou.UI.g.resources
 C:\Users\mvideo\GitHub\ERPForYou2\ERPForYou.UI\obj\Debug\ERPForYou.UI.Properties.Resources.resources
 C:\Users\mvideo\GitHub\ERPForYou2\ERPForYou.UI\obj\Debug\ERPForYou.UI.csproj.GenerateResource.Cache
-C:\Users\mvideo\GitHub\ERPForYou2\ERPForYou.UI\obj\Debug\ReceiptPage.g.cs
-C:\Users\mvideo\GitHub\ERPForYou2\ERPForYou.UI\obj\Debug\ReceiptPage.baml
+C:\Users\mvideo\GitHub\ERPForYou2\ERPForYou.UI\obj\Debug\ExpenditurePage.g.cs
 C:\Users\mvideo\GitHub\ERPForYou2\ERPForYou.UI\obj\Debug\NewReceiptForm.g.cs
+C:\Users\mvideo\GitHub\ERPForYou2\ERPForYou.UI\obj\Debug\ReceiptPage.g.cs
+C:\Users\mvideo\GitHub\ERPForYou2\ERPForYou.UI\obj\Debug\ExpenditurePage.baml
 C:\Users\mvideo\GitHub\ERPForYou2\ERPForYou.UI\obj\Debug\NewReceiptForm.baml
+C:\Users\mvideo\GitHub\ERPForYou2\ERPForYou.UI\obj\Debug\ReceiptPage.baml
+C:\Users\mvideo\GitHub\ERPForYou2\ERPForYou.UI\obj\Debug\RemainderPage.g.cs
+C:\Users\mvideo\GitHub\ERPForYou2\ERPForYou.UI\obj\Debug\RemainderPage.baml

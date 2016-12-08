@@ -5,17 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ERPForYou.UI"
         mc:Ignorable="d"
-        Title="ERPForYou" Height="500" Width="900" WindowStyle="SingleBorderWindow">
+        Title="  ERPForYou" Height="500" Width="900" WindowStyle="SingleBorderWindow" Icon="icons/warehouse.ico">
 
     <Grid>
         <Grid Name="sideBar" Background="#FF14263B" Width="175" HorizontalAlignment="Left">
-            <Grid Name="receiptNav" Height="40" VerticalAlignment="Top" MouseEnter="receiptNav_MouseEnter" MouseLeave="receiptNav_MouseLeave" MouseDown="receiptNav_MouseDown">
+            <Grid Name="receiptNav" Height="40" VerticalAlignment="Top" Margin="0 10" MouseEnter="receiptNav_MouseEnter" MouseLeave="receiptNav_MouseLeave" MouseDown="receiptNav_MouseDown">
                 <Label x:Name="label1" Content="Приход" HorizontalAlignment="Left" Margin="15 0" VerticalAlignment="Center" Foreground="White" FontFamily="Segoe UI Light" FontSize="16"/>
             </Grid>
-            <Grid Name="expenditureNav" Height="40" Margin="0,40,0,0" VerticalAlignment="Top" MouseEnter="expenditureNav_MouseEnter" MouseLeave="expenditureNav_MouseLeave">
+            <Grid Name="expenditureNav" Height="40" Margin="0,50,0,0" VerticalAlignment="Top" MouseEnter="expenditureNav_MouseEnter" MouseLeave="expenditureNav_MouseLeave" MouseDown="expenditureNav_MouseDown">
                 <Label x:Name="label2" Content="Расход" HorizontalAlignment="Left" Margin="15 0" VerticalAlignment="Center" Foreground="White" FontFamily="Segoe UI Light" FontSize="16"/>
             </Grid>
+            <Grid Name="remainderNav" Height="40" Margin="0,90,0,0" VerticalAlignment="Top" MouseEnter="remainderNav_MouseEnter" MouseLeave="remainderNav_MouseLeave" MouseDown="remainderNav_MouseDown">
+                <Label x:Name="label3" Content="Остаток" HorizontalAlignment="Left" Margin="15 0" VerticalAlignment="Center" Foreground="White" FontFamily="Segoe UI Light" FontSize="16"/>
+            </Grid>
         </Grid>
-        <Frame x:Name="mainFrame" Margin="177,0,0,0.5"/>
+        <Frame x:Name="mainFrame" Margin="177,0,0,0.5" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>
