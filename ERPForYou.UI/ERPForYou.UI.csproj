@@ -55,6 +55,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="EditingType.xaml.cs">
+      <DependentUpon>EditingType.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ExpenditurePage.xaml.cs">
       <DependentUpon>ExpenditurePage.xaml</DependentUpon>
     </Compile>
@@ -67,6 +70,10 @@
     <Compile Include="RemainderPage.xaml.cs">
       <DependentUpon>RemainderPage.xaml</DependentUpon>
     </Compile>
+    <Page Include="EditingType.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ExpenditurePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

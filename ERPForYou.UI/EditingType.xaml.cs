@@ -16,18 +16,13 @@ using System.Windows.Shapes;
 namespace ERPForYou.UI
 {
     /// <summary>
-    /// Логика взаимодействия для NewReceiptForm.xaml
+    /// Логика взаимодействия для AddingNewType.xaml
     /// </summary>
-    public partial class NewReceiptForm : Page
+    public partial class AddingNewType : Page
     {
-        public NewReceiptForm()
+        public AddingNewType()
         {
             InitializeComponent();
-        }
-
-        private void editType_Click(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(new Uri("EditingType.xaml", UriKind.Relative));
         }
     }
 }

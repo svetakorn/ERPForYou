@@ -11,23 +11,25 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="41"></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
+            <RowDefinition Height="102*"></RowDefinition>
+            <RowDefinition Height="70*"></RowDefinition>
+            <RowDefinition Height="101*"></RowDefinition>
+            <RowDefinition Height="71*"></RowDefinition>
+            <RowDefinition Height="87*"></RowDefinition>
         </Grid.RowDefinitions>
         <Label x:Name="label" Content="Форма для нового поступления" HorizontalAlignment="Left" Margin="30,5,0,0" VerticalAlignment="Top" FontSize="16" Height="31" Width="243"/>
-        <Label x:Name="label1" Content="Группа:" HorizontalAlignment="Left" Margin="30,7,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="16" Height="31" Width="65"/>
-        <Label x:Name="label2" Content="Наименование:" HorizontalAlignment="Left" Margin="30,7.5,0,0" Grid.Row="2" VerticalAlignment="Top" FontSize="16" Height="32" Width="124"/>
-        <Label x:Name="label3" Content="Единица измерения:" HorizontalAlignment="Left" Margin="30,9,0,0" Grid.Row="3" VerticalAlignment="Top" FontSize="16" Height="32" Width="160"/>
-        <Label x:Name="label4" Content="Количество:" HorizontalAlignment="Left" Margin="30,10.5,0,0" Grid.Row="4" VerticalAlignment="Top" FontSize="16" Height="32" Width="99"/>
-        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="34,47,0,0" Grid.Row="1" VerticalAlignment="Top" Width="239" Height="22"/>
-        <ComboBox x:Name="comboBox_Copy" HorizontalAlignment="Left" Margin="34,47.5,0,0" Grid.Row="2" VerticalAlignment="Top" Width="440" Height="22"/>
-        <ComboBox x:Name="comboBox_Copy1" HorizontalAlignment="Left" Margin="34,47,0,0" Grid.Row="3" VerticalAlignment="Top" Width="239" Height="22"/>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="22" Margin="34,48.5,0,0" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="button" Content="ОК" HorizontalAlignment="Left" Margin="34,30.5,0,0" Grid.Row="5" VerticalAlignment="Top" Width="120" Height="30" FontSize="16"/>
-        <Button x:Name="button_Copy" Content="Отмена" HorizontalAlignment="Left" Margin="186,30.5,0,0" Grid.Row="5" VerticalAlignment="Top" Width="120" Height="30" FontSize="16"/>
-        
+        <Label x:Name="label1" Content="Тип материала:" HorizontalAlignment="Left" Margin="30,3,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="16" Height="31" Width="124"/>
+        <Label x:Name="label2" Content="Наименование:" HorizontalAlignment="Left" Margin="30,4,0,0" Grid.Row="2" VerticalAlignment="Top" FontSize="16" Height="32" Width="124"/>
+        <Label x:Name="label3" Content="Единица измерения:" HorizontalAlignment="Left" Margin="30,5,0,0" Grid.Row="3" VerticalAlignment="Top" FontSize="16" Height="32" Width="160"/>
+        <Label x:Name="label4" Content="Количество:" HorizontalAlignment="Left" Margin="30,7,0,0" Grid.Row="4" VerticalAlignment="Top" FontSize="16" Height="32" Width="99"/>
+        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="34,77,0,0" Grid.Row="1" VerticalAlignment="Top" Width="239" Height="22"/>
+        <ComboBox x:Name="comboBox_Copy1" HorizontalAlignment="Left" Margin="34,75,0,0" Grid.Row="3" VerticalAlignment="Top" Width="239" Height="22"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="22" Margin="34,41,0,0" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="button" Content="ОК" HorizontalAlignment="Left" Margin="34,31,0,0" Grid.Row="5" VerticalAlignment="Top" Width="120" Height="30" FontSize="16"/>
+        <Button x:Name="button_Copy" Content="Отмена" HorizontalAlignment="Left" Margin="186,31,0,0" Grid.Row="5" VerticalAlignment="Top" Width="120" Height="30" FontSize="16"/>
+        <TextBox x:Name="textBox1" Grid.Row="2" HorizontalAlignment="Left" Height="22" Margin="34,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="655"/>
+        <Button x:Name="editType" Content="Внести изменения в список типов" HorizontalAlignment="Left" Margin="34,43,0,0" Grid.Row="1" VerticalAlignment="Top" Width="239" Click="editType_Click"/>
+        <Button x:Name="editMeasure" Content="Внести изменения в список единиц" HorizontalAlignment="Left" Margin="34,43,0,0" Grid.Row="3" VerticalAlignment="Top" Width="239"/>
+
     </Grid>
 </Page>

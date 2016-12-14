@@ -40,3 +40,5 @@ C:\Users\mvideo\GitHub\ERPForYou2\ERPForYou.UI\obj\Debug\NewReceiptForm.baml
 C:\Users\mvideo\GitHub\ERPForYou2\ERPForYou.UI\obj\Debug\ReceiptPage.baml
 C:\Users\mvideo\GitHub\ERPForYou2\ERPForYou.UI\obj\Debug\RemainderPage.g.cs
 C:\Users\mvideo\GitHub\ERPForYou2\ERPForYou.UI\obj\Debug\RemainderPage.baml
+C:\Users\mvideo\GitHub\ERPForYou2\ERPForYou.UI\obj\Debug\EditingType.g.cs
+C:\Users\mvideo\GitHub\ERPForYou2\ERPForYou.UI\obj\Debug\EditingType.baml
