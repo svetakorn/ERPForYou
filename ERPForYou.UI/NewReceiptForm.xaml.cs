@@ -29,5 +29,10 @@ namespace ERPForYou.UI
         {
             NavigationService.Navigate(new Uri("EditingType.xaml", UriKind.Relative));
         }
+
+        private void editMeasure_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("EditingMeasure.xaml", UriKind.Relative));
+        }
     }
 }
