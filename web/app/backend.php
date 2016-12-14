@@ -75,7 +75,7 @@
 			}
 		}
 
-		function add_zakaz($f3){			
+		static function add_zakaz($f3){			
 			if(isset($_POST["id_trademark"])){
 				$table=new \DB\SQL\Mapper($f3->get('DB'),'zakaz');									
 				$table->id_trademark=$f3->get("POST.id_trademark");	
@@ -83,9 +83,12 @@
 				$table->number=$f3->get("POST.number");					
 				$table->save();	
 				$last_id = $f3->get('DB')->exec("SELECT id FROM zakaz ORDER BY id DESC LIMIT 1")[0]["id"];
-				foreach($_POST["material"] as $material){
-					$f3->get('DB')->exec("INSERT INTO zakaz_material (id_zakaz, id_material, quantity) VALUES ($last_id, $material['id'], $material['quantity'])");
+				if(isset($_POST["material"])){
+					foreach($_POST["material"] as $material){
+						$f3->get('DB')->exec("INSERT INTO zakaz_material (id_zakaz, id_material, quantity) VALUES ($last_id, $material[id], $material[quantity])");
+					}
 				}
+				
 				echo($last_id);
 			}
 			else {
@@ -121,7 +124,7 @@
 				$last_id = $f3->get('DB')->exec("SELECT id FROM zakaz ORDER BY id DESC LIMIT 1")[0]["id"];
 				$f3->get('DB')->exec("DELETE FROM zakaz_material WHERE id_zakaz = ?", $_POST["id"]);
 				foreach($_POST["material"] as $material){
-					$f3->get('DB')->exec("INSERT INTO zakaz_material (id_zakaz, id_material, quantity) VALUES ($last_id, $material['id'], $material['quantity'])");
+					$f3->get('DB')->exec("INSERT INTO zakaz_material (id_zakaz, id_material, quantity) VALUES ($last_id, $material[id], $material[quantity])");
 				}
 				echo($last_id);
 			}
@@ -139,7 +142,9 @@
 				$table->erase();
 				echo("success");
 			}			
-			else echo("error");
+			else {
+				echo("error");
+				}
 		}
 		function remove_agent($f3){
 			if(isset($_POST["id"])){
@@ -148,7 +153,9 @@
 				$table->erase();
 				echo("success");
 			}			
-			else echo("error");
+			else {
+				echo("error");
+				}
 		}
 		function remove_ue($f3){
 			if(isset($_POST["id"])){
@@ -157,7 +164,9 @@
 				$table->erase();
 				echo("success");
 			}			
-			else echo("error");
+			else {
+				echo("error");
+				}
 		}
 		function remove_trademark($f3){
 			if(isset($_POST["id"])){
@@ -166,7 +175,9 @@
 				$table->erase();
 				echo("success");
 			}			
-			else echo("error");
+			else {
+				echo("error");
+				}
 		}
 		function remove_zakaz($f3){
 			if(isset($_POST["id"])){
@@ -175,7 +186,9 @@
 				$table->erase();
 				echo("success");
 			}			
-			else echo("error");
+			else {
+				echo("error");
+				}
 		}
 					
 
