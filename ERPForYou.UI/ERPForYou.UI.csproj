@@ -64,6 +64,9 @@
     <Compile Include="ExpenditurePage.xaml.cs">
       <DependentUpon>ExpenditurePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="NewExpenditureForm.xaml.cs">
+      <DependentUpon>NewExpenditureForm.xaml</DependentUpon>
+    </Compile>
     <Compile Include="NewReceiptForm.xaml.cs">
       <DependentUpon>NewReceiptForm.xaml</DependentUpon>
     </Compile>
@@ -97,6 +100,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="NewExpenditureForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="NewReceiptForm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

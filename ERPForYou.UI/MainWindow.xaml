@@ -19,6 +19,6 @@
                 <Label x:Name="label3" Content="Остаток" HorizontalAlignment="Left" Margin="15 0" VerticalAlignment="Center" Foreground="White" FontFamily="Segoe UI Light" FontSize="16"/>
             </Grid>
         </Grid>
-        <Frame x:Name="mainFrame" Margin="177,0,0,0.5" NavigationUIVisibility="Hidden"/>
+        <Frame x:Name="mainFrame" Margin="177,0,0,0.5" NavigationUIVisibility="Hidden" ScrollViewer.CanContentScroll="True"/>
     </Grid>
 </Window>
