@@ -2,7 +2,6 @@
 	namespace backend; 
 
 	class main{
-		
 
 		//ADDING ITEMS
 
@@ -19,6 +18,7 @@
 				echo("error");
 			}
 		}
+		
 		
 		function add_trademark($f3){			
 			if (isset($_POST["name"])){
