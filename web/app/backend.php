@@ -3,21 +3,17 @@
 
 	class main{
 		
-		function reg(){
-			$template=new \Template;
-			echo $template->render('backend/entrance.php');
-		}
 
 		//ADDING ITEMS
 		
 
-		function addMaterial($f3){
+		function add_material($f3){
 			if( (isset($_POST["name"])) && (isset($_POST["id_ue"])) ){
-			$table=new \DB\SQL\Mapper(\F3::get('DB'),'material');						
-			$table->name=\F3::get("POST.name");
-			$table->id_ue=\F3::get("POST.id_ue");						
+			$table=new \DB\SQL\Mapper($f3->get('DB'),'material');						
+			$table->name=$f3->get("POST.name");
+			$table->id_ue=$f3->get("POST.id_ue");						
 			$table->save();	
-			$last_id = \F3::get('DB')->exec("SELECT id FROM material ORDER BY id DESC LIMIT 1")[0]["id"];		
+			$last_id = $f3->get('DB')->exec("SELECT id FROM material ORDER BY id DESC LIMIT 1")[0]["id"];		
 			echo($last_id);
 			}
 			else {
@@ -25,12 +21,12 @@
 			}
 		}
 		
-		function addTrademark($f3){			
+		function add_trademark($f3){			
 			if (isset($_POST["name"])){
-			$table=new \DB\SQL\Mapper(\F3::get('DB'),'trademark');						
-			$table->name=\F3::get("POST.name");					
+			$table=new \DB\SQL\Mapper($f3->get('DB'),'trademark');						
+			$table->name=$f3->get("POST.name");					
 			$table->save();	
-			$last_id = \F3::get('DB')->exec("SELECT id FROM trademark ORDER BY id DESC LIMIT 1")[0]["id"];		
+			$last_id = $f3->get('DB')->exec("SELECT id FROM trademark ORDER BY id DESC LIMIT 1")[0]["id"];		
 			echo($last_id);
 			}
 			else {
@@ -38,12 +34,12 @@
 			}
 		}
 		
-		function addAgent($f3){			
+		function add_agent($f3){			
 			if (isset($_POST["name"])){
-			$table=new \DB\SQL\Mapper(\F3::get('DB'),'agent');						
-			$table->name=\F3::get("POST.name");					
+			$table=new \DB\SQL\Mapper($f3->get('DB'),'agent');						
+			$table->name=$f3->get("POST.name");					
 			$table->save();	
-			$last_id = \F3::get('DB')->exec("SELECT id FROM agent ORDER BY id DESC LIMIT 1")[0]["id"];		
+			$last_id = $f3->get('DB')->exec("SELECT id FROM agent ORDER BY id DESC LIMIT 1")[0]["id"];		
 			echo($last_id);
 			}
 			else {
@@ -51,15 +47,15 @@
 			}
 		}
 		
-		function addToSklad($f3){			
+		function add_to_sklad($f3){			
 			if (isset($_POST["id_material"])){
-			$table=new \DB\SQL\Mapper(\F3::get('DB'),'sklad');						
-			$table->id_material=\F3::get("POST.id_material");
-			$table->id_ue=\F3::get("POST.id_ue");	
-			$table->quantity=\F3::get("POST.quantity");
+			$table=new \DB\SQL\Mapper($f3->get('DB'),'sklad');						
+			$table->id_material=$f3->get("POST.id_material");
+			$table->id_ue=$f3->get("POST.id_ue");	
+			$table->quantity=$f3->get("POST.quantity");
 			$table->type=1;				
 			$table->save();	
-			$last_id = \F3::get('DB')->exec("SELECT id FROM sklad ORDER BY id DESC LIMIT 1")[0]["id"];		
+			$last_id = $f3->get('DB')->exec("SELECT id FROM sklad ORDER BY id DESC LIMIT 1")[0]["id"];		
 			echo($last_id);
 			}
 			else {
@@ -67,12 +63,12 @@
 			}
 		}
 		
-		function addUe($f3){			
+		function add_ue($f3){			
 			if(isset($_POST["name"])){
-				$table=new \DB\SQL\Mapper(\F3::get('DB'),'ue');									
-				$table->name=\F3::get("POST.name");					
+				$table=new \DB\SQL\Mapper($f3->get('DB'),'ue');									
+				$table->name=$f3->get("POST.name");					
 				$table->save();	
-				$last_id = \F3::get('DB')->exec("SELECT id FROM ue ORDER BY id DESC LIMIT 1")[0]["id"];
+				$last_id = $f3->get('DB')->exec("SELECT id FROM ue ORDER BY id DESC LIMIT 1")[0]["id"];
 				echo($last_id);
 			}
 			else {
@@ -80,16 +76,16 @@
 			}
 		}
 
-		function addZakaz($f3){			
+		function add_zakaz($f3){			
 			if(isset($_POST["id_trademark"])){
-				$table=new \DB\SQL\Mapper(\F3::get('DB'),'zakaz');									
-				$table->id_trademark=\F3::get("POST.id_trademark");	
-				$table->id_agent=\F3::get("POST.id_agent");	
-				$table->number=\F3::get("POST.number");					
+				$table=new \DB\SQL\Mapper($f3->get('DB'),'zakaz');									
+				$table->id_trademark=$f3->get("POST.id_trademark");	
+				$table->id_agent=$f3->get("POST.id_agent");	
+				$table->number=$f3->get("POST.number");					
 				$table->save();	
-				$last_id = \F3::get('DB')->exec("SELECT id FROM zakaz ORDER BY id DESC LIMIT 1")[0]["id"];
+				$last_id = $f3->get('DB')->exec("SELECT id FROM zakaz ORDER BY id DESC LIMIT 1")[0]["id"];
 				foreach($_POST["material"] as $material){
-					\F3::get('DB')->exec("INSERT INTO zakaz_material (id_zakaz, id_material, quantity) VALUES ($last_id, $material['id'], $material['quantity'])");
+					$f3->get('DB')->exec("INSERT INTO zakaz_material (id_zakaz, id_material, quantity) VALUES ($last_id, $material['id'], $material['quantity'])");
 				}
 				echo($last_id);
 			}
@@ -98,15 +94,15 @@
 			}
 		}
 		
-		function removeFromSklad($f3){			
+		function remove_from_sklad($f3){			
 			if (isset($_POST["id"])){
-			$table=new \DB\SQL\Mapper(\F3::get('DB'),'sklad');						
-			$table->id_material=\F3::get("POST.id_material");
-			$table->id_ue=\F3::get("POST.id_ue");	
-			$table->quantity=\F3::get("POST.quantity");
+			$table=new \DB\SQL\Mapper($f3->get('DB'),'sklad');						
+			$table->id_material=$f3->get("POST.id_material");
+			$table->id_ue=$f3->get("POST.id_ue");	
+			$table->quantity=$f3->get("POST.quantity");
 			$table->type=0;					
 			$table->save();	
-			$last_id = \F3::get('DB')->exec("SELECT id FROM sklad ORDER BY id DESC LIMIT 1")[0]["id"];		
+			$last_id = $f3->get('DB')->exec("SELECT id FROM sklad ORDER BY id DESC LIMIT 1")[0]["id"];		
 			echo($last_id);
 			}
 			else {
@@ -115,18 +111,18 @@
 		}
 		//EDITING ITEMS
 		
-		function editZakaz($f3){			
+		function edit_zakaz($f3){			
 			if(isset($_POST["id_trademark"])){
-				$table=new \DB\SQL\Mapper(\F3::get('DB'),'zakaz');	
+				$table=new \DB\SQL\Mapper($f3->get('DB'),'zakaz');	
 				$table->load(array("id = ?", $_POST["id"]));								
-				$table->id_trademark=\F3::get("POST.id_trademark");	
-				$table->id_agent=\F3::get("POST.id_agent");	
-				$table->number=\F3::get("POST.number");					
+				$table->id_trademark=$f3->get("POST.id_trademark");	
+				$table->id_agent=$f3->get("POST.id_agent");	
+				$table->number=$f3->get("POST.number");					
 				$table->update();	
-				$last_id = \F3::get('DB')->exec("SELECT id FROM zakaz ORDER BY id DESC LIMIT 1")[0]["id"];
-				\F3::get('DB')->exec("DELETE FROM zakaz_material WHERE id_zakaz = ?", $_POST["id"]);
+				$last_id = $f3->get('DB')->exec("SELECT id FROM zakaz ORDER BY id DESC LIMIT 1")[0]["id"];
+				$f3->get('DB')->exec("DELETE FROM zakaz_material WHERE id_zakaz = ?", $_POST["id"]);
 				foreach($_POST["material"] as $material){
-					\F3::get('DB')->exec("INSERT INTO zakaz_material (id_zakaz, id_material, quantity) VALUES ($last_id, $material['id'], $material['quantity'])");
+					$f3->get('DB')->exec("INSERT INTO zakaz_material (id_zakaz, id_material, quantity) VALUES ($last_id, $material['id'], $material['quantity'])");
 				}
 				echo($last_id);
 			}
@@ -137,6 +133,51 @@
 		
 		//REMOVING ITEMS
 		
-				
+		function remove_material($f3){
+			if(isset($_POST["id"])){
+				$table=new \DB\SQL\Mapper($f3->get('DB'),'material');
+				$table->load(array('id=?',$_POST['id']));
+				$table->erase();
+				echo("success");
+			}			
+			else echo("error");
+		}
+		function remove_agent($f3){
+			if(isset($_POST["id"])){
+				$table=new \DB\SQL\Mapper($f3->get('DB'),'agent');
+				$table->load(array('id=?',$_POST['id']));
+				$table->erase();
+				echo("success");
+			}			
+			else echo("error");
+		}
+		function remove_ue($f3){
+			if(isset($_POST["id"])){
+				$table=new \DB\SQL\Mapper($f3->get('DB'),'ue');
+				$table->load(array('id=?',$_POST['id']));
+				$table->erase();
+				echo("success");
+			}			
+			else echo("error");
+		}
+		function remove_trademark($f3){
+			if(isset($_POST["id"])){
+				$table=new \DB\SQL\Mapper($f3->get('DB'),'trademark');
+				$table->load(array('id=?',$_POST['id']));
+				$table->erase();
+				echo("success");
+			}			
+			else echo("error");
+		}
+		function remove_zakaz($f3){
+			if(isset($_POST["id"])){
+				$table=new \DB\SQL\Mapper($f3->get('DB'),'zakaz');
+				$table->load(array('id=?',$_POST['id']));
+				$table->erase();
+				echo("success");
+			}			
+			else echo("error");
+		}
+					
 
 	}
