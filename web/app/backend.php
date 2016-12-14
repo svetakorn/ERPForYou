@@ -1,7 +1,7 @@
 <?php	
 	namespace backend; 
 
-	class main{
+	class edit{
 
 		//ADDING ITEMS
 
@@ -192,4 +192,35 @@
 		}
 					
 
+	}
+	class get{
+		function get_agent($f3){
+			$result = $f3->get("DB")->exec("SELECT * FROM agent");
+			die(json_encode($result, JSON_UNESCAPED_UNICODE));
+		}
+		function get_ue($f3){
+			$result = $f3->get("DB")->exec("SELECT * FROM ue");
+			die(json_encode($result, JSON_UNESCAPED_UNICODE));
+		}
+		function get_trademark($f3){
+			$result = $f3->get("DB")->exec("SELECT * FROM trademark");
+			die(json_encode($result, JSON_UNESCAPED_UNICODE));
+		}
+		function get_zakaz($f3){
+			$result = $f3->get("DB")->exec("SELECT * FROM zakaz");
+			foreach($result as $key=>$value){
+				$m = $f3->get("DB")->exec("SELECT material.id, material.name, zakaz_material.quantity FROM zakaz_material  
+										   INNER JOIN material ON material.id = zakaz_material.id_material
+										   WHERE id_zakaz = $value[id]");
+				$result[$key]["material"] = $m;
+			}
+			die(json_encode($result, JSON_UNESCAPED_UNICODE));
+		}
+		
+		function get_sklad($f3){
+			$result = $f3->get("DB")->exec("SELECT sklad.id, material.name as material_name, sklad.quantity, ue.name as ue_name, sklad.type FROM sklad
+											LEFT JOIN material ON material.id = sklad.id_material
+											LEFT JOIN ue ON ue.id = sklad.id_ue");
+			die(json_encode($result, JSON_UNESCAPED_UNICODE));
+		}
 	}
