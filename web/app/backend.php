@@ -5,7 +5,6 @@
 		
 
 		//ADDING ITEMS
-		
 
 		function add_material($f3){
 			if( (isset($_POST["name"])) && (isset($_POST["id_ue"])) ){
