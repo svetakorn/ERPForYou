@@ -10,11 +10,11 @@ namespace ERPForYou.Data
 {
     public static class Repository
     {
-        public static List<Material> Materials; //
+        public static List<Material> Materials; 
         public static List<Trademark> Trademarks;
-        public static List<Agent> Agents; //
-        public static List<UE> Ues; //
-        public static List<Type> Types; //
+        public static List<Agent> Agents; 
+        public static List<UE> Ues; 
+        public static List<Type> Types; 
         public static List<Zakaz> Zakazs;
         public static List<Sklad> Sklads;
 
@@ -79,5 +79,6 @@ namespace ERPForYou.Data
                 Sklads = JsonConvert.DeserializeObject<List<Sklad>>(json);
             }
         }
+        
     }
 }

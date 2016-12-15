@@ -23,6 +23,17 @@ namespace ERPForYou.UI
         public ReceiptPage()
         {
             InitializeComponent();
+            Data.Repository.UpdateSklad();
+            Data.Repository.UpdateMaterial();
+            Data.Repository.UpdateUe();
+            var result = from s in Data.Repository.Sklads
+                                       select new Data.ViewModel.SkladViewModel
+                                       {
+                                           material_name = (from c in Data.Repository.Materials where s.Id_material == c.Id select c.Name).Single(),
+                                           ue_name = (from c in Data.Repository.Ues where s.Id_ue == c.Id select c.Name).Single(),
+                                           Quantity = s.Quantity
+                                       };
+            receiptTable.ItemsSource = result.ToList();
         }
         //static MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
         private void newReceiptButton_Click(object sender, RoutedEventArgs e)
@@ -31,5 +42,5 @@ namespace ERPForYou.UI
             NavigationService.Navigate(new Uri("NewReceiptForm.xaml", UriKind.Relative));
         }
 
-}
+    }
 }

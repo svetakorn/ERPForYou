@@ -1,0 +1,12 @@
+C:\Users\mvideo\GitHub\ERPForYou4\ERPForYou.Data\bin\Debug\ERPForYou.Data.dll
+C:\Users\mvideo\GitHub\ERPForYou4\ERPForYou.Data\bin\Debug\ERPForYou.Data.pdb
+C:\Users\mvideo\GitHub\ERPForYou4\ERPForYou.Data\bin\Debug\Newtonsoft.Json.dll
+C:\Users\mvideo\GitHub\ERPForYou4\ERPForYou.Data\bin\Debug\Newtonsoft.Json.xml
+C:\Users\mvideo\GitHub\ERPForYou4\ERPForYou.Data\obj\Debug\ERPForYou.Data.csprojResolveAssemblyReference.cache
+C:\Users\mvideo\GitHub\ERPForYou4\ERPForYou.Data\obj\Debug\ERPForYou.Data.dll
+C:\Users\mvideo\GitHub\ERPForYou4\ERPForYou.Data\obj\Debug\ERPForYou.Data.pdb
+C:\Users\mvideo\GitHub\ERPForYou4\ERPForYou.Data\bin\Debug\ERPForYou.Data.dll.config
+C:\Users\mvideo\GitHub\ERPForYou4\ERPForYou.Data\bin\Debug\EntityFramework.dll
+C:\Users\mvideo\GitHub\ERPForYou4\ERPForYou.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\mvideo\GitHub\ERPForYou4\ERPForYou.Data\bin\Debug\EntityFramework.xml
+C:\Users\mvideo\GitHub\ERPForYou4\ERPForYou.Data\bin\Debug\EntityFramework.SqlServer.xml
