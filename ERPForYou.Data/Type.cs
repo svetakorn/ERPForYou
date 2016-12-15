@@ -6,12 +6,10 @@ using System.Threading.Tasks;
 
 namespace ERPForYou.Data
 {
-    public class Sklad
+    public class Type
     {
-        public int Type { get; set; }
-        public int Id_material { get; set; }
-        public int Id_ue { get; set; }
-        public int Quantity { get; set; }
         public int Id { get; set; }
+        public string  Name { get; set; }
     }
 }
+

@@ -8,9 +8,8 @@ namespace ERPForYou.Data
 {
     public class Zakaz
     {
-        public Trademark Trademark { get; set; }
-        public int MyProperty { get; set; }
-        public Agent Agent { get; set; }
+        public int Id_trademark { get; set; }
+        public int Id_agent { get; set; }
         public int Quantity { get; set; }
         public DateTime Datetime { get; set; }
         public int Id { get; set; }

@@ -49,6 +49,7 @@
     <Compile Include="Repository.cs" />
     <Compile Include="Sklad.cs" />
     <Compile Include="Trademark.cs" />
+    <Compile Include="Type.cs" />
     <Compile Include="UE.cs" />
     <Compile Include="Material.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
