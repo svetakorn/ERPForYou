@@ -74,3 +74,6 @@ C:\Users\Natasha\Source\Repos\ERPForYou\ERPForYou.UI\obj\Debug\RemainderPage.bam
 C:\Users\Natasha\Source\Repos\ERPForYou\ERPForYou.UI\obj\Debug\ERPForYou.UI.g.resources
 C:\Users\Natasha\Source\Repos\ERPForYou\ERPForYou.UI\obj\Debug\ERPForYou.UI.Properties.Resources.resources
 C:\Users\Natasha\Source\Repos\ERPForYou\ERPForYou.UI\obj\Debug\ERPForYou.UI.csproj.GenerateResource.Cache
+C:\Users\mvideo\GitHub\ERPForYou4\ERPForYou.UI\bin\Debug\ERPForYou.UI.exe.config
+C:\Users\mvideo\GitHub\ERPForYou4\ERPForYou.UI\obj\Debug\ERPForYou.UI.exe
+C:\Users\mvideo\GitHub\ERPForYou4\ERPForYou.UI\obj\Debug\ERPForYou.UI.pdb
