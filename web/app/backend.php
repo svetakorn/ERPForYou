@@ -158,6 +158,17 @@
 				echo("error");
 				}
 		}
+		function remove_type($f3){
+			if(isset($_POST["id"])){
+				$table=new \DB\SQL\Mapper($f3->get('DB'),'type');
+				$table->load(array('id=?',$_POST['id']));
+				$table->erase();
+				echo("success");
+			}			
+			else {
+				echo("error");
+				}
+		}
 		function remove_ue($f3){
 			if(isset($_POST["id"])){
 				$table=new \DB\SQL\Mapper($f3->get('DB'),'ue');
@@ -203,8 +214,16 @@
 			$result = $f3->get("DB")->exec("SELECT * FROM ue");
 			die(json_encode($result, JSON_UNESCAPED_UNICODE));
 		}
+		function get_type($f3){
+			$result = $f3->get("DB")->exec("SELECT * FROM type");
+			die(json_encode($result, JSON_UNESCAPED_UNICODE));
+		}
 		function get_trademark($f3){
 			$result = $f3->get("DB")->exec("SELECT * FROM trademark");
+			die(json_encode($result, JSON_UNESCAPED_UNICODE));
+		}
+		function get_material($f3){
+			$result = $f3->get("DB")->exec("SELECT material.id as id, material.name AS name, ue.id as id_ue, type.id as id_type FROM material INNER JOIN ue ON ue.id = material.id_ue INNER JOIN type ON type.id = material.id_type");
 			die(json_encode($result, JSON_UNESCAPED_UNICODE));
 		}
 		function get_zakaz($f3){
