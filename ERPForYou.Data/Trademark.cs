@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace ERPForYou.Data
 {
-    public class Class1
+    public class Trademark
     {
+        public int Id { get; set; }
+        public string Name { get; set; }
     }
 }
