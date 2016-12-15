@@ -80,7 +80,7 @@
 				$table=new \DB\SQL\Mapper($f3->get('DB'),'zakaz');									
 				$table->id_trademark=$f3->get("POST.id_trademark");	
 				$table->id_agent=$f3->get("POST.id_agent");	
-				$table->number=$f3->get("POST.number");					
+				$table->quantity=$f3->get("POST.quantity");					
 				$table->save();	
 				$last_id = $f3->get('DB')->exec("SELECT id FROM zakaz ORDER BY id DESC LIMIT 1")[0]["id"];
 				if(isset($_POST["material"])){
@@ -111,6 +111,7 @@
 				echo("error");
 			}
 		}
+		
 		//EDITING ITEMS
 		
 		function edit_zakaz($f3){			
@@ -119,7 +120,7 @@
 				$table->load(array("id = ?", $_POST["id"]));								
 				$table->id_trademark=$f3->get("POST.id_trademark");	
 				$table->id_agent=$f3->get("POST.id_agent");	
-				$table->number=$f3->get("POST.number");					
+				$table->quantity=$f3->get("POST.quantity");					
 				$table->update();	
 				$last_id = $f3->get('DB')->exec("SELECT id FROM zakaz ORDER BY id DESC LIMIT 1")[0]["id"];
 				$f3->get('DB')->exec("DELETE FROM zakaz_material WHERE id_zakaz = ?", $_POST["id"]);
