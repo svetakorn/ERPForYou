@@ -15,9 +15,13 @@ namespace ERPForYou.Data
         public  List<Zakaz> Receipts;
         public  List<Sklad> Sklad;
 
-        public void UpdateMaterials()
+        public void UpdateUe()
         {
-            WebClient wc = new WebClient();
+            using (WebClient wc = new WebClient())
+            {
+                var json = wc.DownloadString("http://pestova.styleru.net/proga/get_ue");
+
+            }
 
         }
     }
