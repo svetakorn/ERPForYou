@@ -202,7 +202,17 @@
 				echo("error");
 				}
 		}
-					
+		function remove_sklad($f3){
+			if(isset($_POST["id"])){
+				$table=new \DB\SQL\Mapper($f3->get('DB'),'sklad');
+				$table->load(array('id=?',$_POST['id']));
+				$table->erase();
+				echo("success");
+			}			
+			else {
+				echo("error");
+				}
+		}			
 
 	}
 	class get{
@@ -239,7 +249,7 @@
 		}
 		
 		function get_sklad($f3){
-			$result = $f3->get("DB")->exec("SELECT sklad.id, material.name as material_name, sklad.quantity, ue.name as ue_name, sklad.type FROM sklad
+			$result = $f3->get("DB")->exec("SELECT sklad.id, material.id as id_material, sklad.quantity, ue.id as id_ue, sklad.type FROM sklad
 											LEFT JOIN material ON material.id = sklad.id_material
 											LEFT JOIN ue ON ue.id = sklad.id_ue");
 			die(json_encode($result, JSON_UNESCAPED_UNICODE));
