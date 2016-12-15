@@ -46,3 +46,6 @@ C:\Users\mvideo\GitHub\ERPForYou2\ERPForYou.UI\obj\Debug\EditingMeasure.g.cs
 C:\Users\mvideo\GitHub\ERPForYou2\ERPForYou.UI\obj\Debug\EditingMeasure.baml
 C:\Users\mvideo\GitHub\ERPForYou2\ERPForYou.UI\obj\Debug\NewExpenditureForm.g.cs
 C:\Users\mvideo\GitHub\ERPForYou2\ERPForYou.UI\obj\Debug\NewExpenditureForm.baml
+C:\Users\Natasha\Source\Repos\ERPForYou\ERPForYou.UI\bin\Debug\ERPForYou.UI.exe.config
+C:\Users\Natasha\Source\Repos\ERPForYou\ERPForYou.UI\obj\Debug\ERPForYou.UI.exe
+C:\Users\Natasha\Source\Repos\ERPForYou\ERPForYou.UI\obj\Debug\ERPForYou.UI.pdb
