@@ -10,5 +10,8 @@ namespace ERPForYou.Data
     {
         public int Id { get; set; }
         public string Name { get; set; }
+        public UE Ue { get; set; }
+        public int Id_ue { get; set; }
+
     }
 }

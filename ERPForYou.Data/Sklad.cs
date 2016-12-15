@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 
 namespace ERPForYou.Data
 {
-    class Zakaz
+    class Sklad
     {
-        public Trademark Trademark { get; set; }
-        public int MyProperty { get; set; }
-        public Agent Agent { get; set; }
+        public int Type { get; set; }
+        public int Id_material { get; set; }
+        public int Id_ue { get; set; }
+        public UE Ue { get; set; }
+        public Material Material { get; set; }
         public int Quantity { get; set; }
-        public DateTime Datetime { get; set; }
         public int Id { get; set; }
     }
 }

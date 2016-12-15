@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Agent.cs" />
+    <Compile Include="Sklad.cs" />
     <Compile Include="Trademark.cs" />
     <Compile Include="UE.cs" />
     <Compile Include="Material.cs" />
