@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ERPForYou.Data
 {
-    class Sklad
+    public class Sklad
     {
         public int Type { get; set; }
         public int Id_material { get; set; }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ERPForYou.Data
 {
-    class Zakaz
+    public class Zakaz
     {
         public Trademark Trademark { get; set; }
         public int MyProperty { get; set; }
