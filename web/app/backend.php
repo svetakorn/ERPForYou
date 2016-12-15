@@ -222,6 +222,7 @@
 			$result = $f3->get("DB")->exec("SELECT * FROM trademark");
 			die(json_encode($result, JSON_UNESCAPED_UNICODE));
 		}
+		
 		function get_material($f3){
 			$result = $f3->get("DB")->exec("SELECT material.id as id, material.name AS name, ue.id as id_ue, type.id as id_type FROM material INNER JOIN ue ON ue.id = material.id_ue INNER JOIN type ON type.id = material.id_type");
 			die(json_encode($result, JSON_UNESCAPED_UNICODE));
