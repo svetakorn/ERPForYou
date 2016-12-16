@@ -9,7 +9,8 @@
 			if( (isset($_POST["name"])) && (isset($_POST["id_ue"])) ){
 			$table=new \DB\SQL\Mapper($f3->get('DB'),'material');						
 			$table->name=$f3->get("POST.name");
-			$table->id_ue=$f3->get("POST.id_ue");						
+			$table->id_ue=$f3->get("POST.id_ue");
+			$table->unit_price=$f3->get("POST.unit_price");						
 			$table->save();	
 			$last_id = $f3->get('DB')->exec("SELECT id FROM material ORDER BY id DESC LIMIT 1")[0]["id"];		
 			echo($last_id);
@@ -128,6 +129,81 @@
 					$f3->get('DB')->exec("INSERT INTO zakaz_material (id_zakaz, id_material, quantity) VALUES ($last_id, $material[id], $material[quantity])");
 				}
 				echo($last_id);
+			}
+			else {
+				echo("error");
+			}
+		}
+		
+		function edit_ue($f3){			
+			if(isset($_POST["id"])){
+				$table=new \DB\SQL\Mapper($f3->get('DB'),'ue');
+				$table->load(array('id=?',$_POST['id']));									
+				$table->name=$f3->get("POST.name");					
+				$table->save();	
+				echo("success");
+			}
+			else {
+				echo("error");
+			}
+		}
+		
+		function edit_material($f3){
+			if(isset($_POST["id"])){
+			$table=new \DB\SQL\Mapper($f3->get('DB'),'material');	
+			$table->load(array('id=?',$_POST['id']));					
+			$table->name=$f3->get("POST.name");
+			$table->id_ue=$f3->get("POST.id_ue");
+			$table->unit_price=$f3->get("POST.unit_price");						
+			$table->save();	
+			$last_id = $f3->get('DB')->exec("SELECT id FROM material ORDER BY id DESC LIMIT 1")[0]["id"];		
+			echo($last_id);
+			}
+			else {
+				echo("error");
+			}
+		}
+		
+		
+		function edit_trademark($f3){			
+			if (isset($_POST["id"])){
+			$table=new \DB\SQL\Mapper($f3->get('DB'),'trademark');
+			$table->load(array('id=?',$_POST['id']));						
+			$table->name=$f3->get("POST.name");					
+			$table->save();	
+			$last_id = $f3->get('DB')->exec("SELECT id FROM trademark ORDER BY id DESC LIMIT 1")[0]["id"];		
+			echo($last_id);
+			}
+			else {
+				echo("error");
+			}
+		}
+		
+		function edit_agent($f3){			
+			if (isset($_POST["id"])){
+			$table=new \DB\SQL\Mapper($f3->get('DB'),'agent');
+			$table->load(array('id=?',$_POST['id']));						
+			$table->name=$f3->get("POST.name");					
+			$table->save();	
+			$last_id = $f3->get('DB')->exec("SELECT id FROM agent ORDER BY id DESC LIMIT 1")[0]["id"];		
+			echo($last_id);
+			}
+			else {
+				echo("error");
+			}
+		}
+		
+		function edit_sklad($f3){			
+			if (isset($_POST["id"])){
+			$table=new \DB\SQL\Mapper($f3->get('DB'),'sklad');
+			$table->load(array('id=?',$_POST['id']));						
+			$table->id_material=$f3->get("POST.id_material");
+			$table->id_ue=$f3->get("POST.id_ue");	
+			$table->quantity=$f3->get("POST.quantity");
+			$table->type=1;				
+			$table->save();	
+			$last_id = $f3->get('DB')->exec("SELECT id FROM sklad ORDER BY id DESC LIMIT 1")[0]["id"];		
+			echo($last_id);
 			}
 			else {
 				echo("error");
