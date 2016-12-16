@@ -8,8 +8,8 @@ namespace ERPForYou.Data.ViewModel
 {
     public class SkladViewModel
     {
-        public string material_name { get; set; }
-        public string ue_name { get; set; }
+        public string Material_name { get; set; }
+        public string Ue_name { get; set; }
         public int Quantity { get; set; }
     }
 }

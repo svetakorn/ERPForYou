@@ -23,6 +23,18 @@ namespace ERPForYou.UI
         public NewReceiptForm()
         {
             InitializeComponent();
+
+            Data.Repository.UpdateUe();
+            var resultMeasure = from s in Data.Repository.Ues select s.Name;
+            comboBoxMeasure.ItemsSource = resultMeasure.ToList();
+
+            Data.Repository.UpdateMaterial();
+            var resultMaterial = from s in Data.Repository.Materials select s.Name;
+            comboBoxMaterial.ItemsSource = resultMaterial.ToList();
+
+            Data.Repository.UpdateType();
+            var resultType = from s in Data.Repository.Types select s.Name;
+            comboBoxType.ItemsSource = resultType.ToList();
         }
 
         private void editType_Click(object sender, RoutedEventArgs e)
