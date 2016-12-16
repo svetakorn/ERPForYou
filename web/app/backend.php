@@ -6,10 +6,12 @@
 		//ADDING ITEMS
 
 		function add_material($f3){
-			if( (isset($_POST["name"])) && (isset($_POST["id_ue"])) ){
+			if((isset($_POST["name"]))){
 			$table=new \DB\SQL\Mapper($f3->get('DB'),'material');						
 			$table->name=$f3->get("POST.name");
-			$table->id_ue=$f3->get("POST.id_ue");						
+			$table->id_ue=$f3->get("POST.id_ue");	
+			$table->id_type=$f3->get("POST.id_type");
+			$table->unit_price=$f3->get("POST.unit_price");				
 			$table->save();	
 			$last_id = $f3->get('DB')->exec("SELECT id FROM material ORDER BY id DESC LIMIT 1")[0]["id"];		
 			echo($last_id);
@@ -74,6 +76,21 @@
 				echo("error");
 			}
 		}
+
+		function add_type($f3){			
+			if(isset($_POST["name"])){
+				$table=new \DB\SQL\Mapper($f3->get('DB'),'type');									
+				$table->name=$f3->get("POST.name");					
+				$table->save();	
+				$last_id = $f3->get('DB')->exec("SELECT id FROM type ORDER BY id DESC LIMIT 1")[0]["id"];
+				echo($last_id);
+			}
+			else {
+				echo("error");
+			}
+		}
+
+		
 
 		static function add_zakaz($f3){			
 			if(isset($_POST["id_trademark"])){
@@ -180,6 +197,7 @@
 				echo("error");
 				}
 		}
+		
 		function remove_trademark($f3){
 			if(isset($_POST["id"])){
 				$table=new \DB\SQL\Mapper($f3->get('DB'),'trademark');
@@ -228,13 +246,14 @@
 			$result = $f3->get("DB")->exec("SELECT * FROM type");
 			die(json_encode($result, JSON_UNESCAPED_UNICODE));
 		}
+		
 		function get_trademark($f3){
 			$result = $f3->get("DB")->exec("SELECT * FROM trademark");
 			die(json_encode($result, JSON_UNESCAPED_UNICODE));
 		}
 		
 		function get_material($f3){
-			$result = $f3->get("DB")->exec("SELECT material.id as id, material.name AS name, ue.id as id_ue, type.id as id_type FROM material INNER JOIN ue ON ue.id = material.id_ue INNER JOIN type ON type.id = material.id_type");
+			$result = $f3->get("DB")->exec("SELECT material.id as id, material.name as name, ue.id as id_ue, type.id as id_type, material.unit_price as unit_price FROM material INNER JOIN ue ON ue.id = material.id_ue INNER JOIN type ON type.id = material.id_type");
 			die(json_encode($result, JSON_UNESCAPED_UNICODE));
 		}
 		function get_zakaz($f3){
@@ -249,9 +268,8 @@
 		}
 		
 		function get_sklad($f3){
-			$result = $f3->get("DB")->exec("SELECT sklad.id, material.id as id_material, sklad.quantity, ue.id as id_ue, sklad.type FROM sklad
-											LEFT JOIN material ON material.id = sklad.id_material
-											LEFT JOIN ue ON ue.id = sklad.id_ue");
+			$result = $f3->get("DB")->exec("SELECT sklad.id, material.id as id_material, sklad.quantity FROM sklad
+											INNER JOIN material ON material.id = sklad.id_material");
 			die(json_encode($result, JSON_UNESCAPED_UNICODE));
 		}
 	}

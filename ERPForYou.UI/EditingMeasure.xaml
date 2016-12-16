@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:ERPForYou.UI"
       mc:Ignorable="d" 
       d:DesignHeight="472" d:DesignWidth="718"
-      Title="AddingNewType" Background="White" FontSize="16">
+      Title="EditingMeasure" Background="White" FontSize="16">
 
     <Grid>
         <Grid Background="#E7F3FE" Margin="359,0,0,0">

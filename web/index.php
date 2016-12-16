@@ -9,9 +9,9 @@
 	F3::set('UI','ui/');
 	F3::set('DB',
 		new \DB\SQL(
-			'mysql:host=localhost;port=3306;dbname=proga',
-			'rieltor',
-			'VPZ5sAGw'
+			'mysql:host=localhost;port=3306;dbname=kornilova',
+			'skornilova',
+			'm1xhw0'
 		)
 	);
 	

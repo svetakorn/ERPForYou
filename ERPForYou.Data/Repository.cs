@@ -14,7 +14,8 @@ namespace ERPForYou.Data
         public static List<Trademark> Trademarks;
         public static List<Agent> Agents; 
         public static List<UE> Ues; 
-        public static List<Type> Types; 
+        public static List<Type> Types;
+
         public static List<Zakaz> Zakazs;
         public static List<Sklad> Sklads;
 
@@ -22,7 +23,7 @@ namespace ERPForYou.Data
         {
             using (WebClient wc = new WebClient())
             {
-                var json = wc.DownloadString("http://pestova.styleru.net/proga/get_ue");
+                var json = wc.DownloadString("http://kornilova.styleru.net/proga/get_ue");
                 Ues = JsonConvert.DeserializeObject<List<UE>>(json);
             }
         }
@@ -31,16 +32,18 @@ namespace ERPForYou.Data
         {
             using (WebClient wc = new WebClient())
             {
-                var json = wc.DownloadString("http://pestova.styleru.net/proga/get_type");
+                var json = wc.DownloadString("http://kornilova.styleru.net/proga/get_type");
                 Types = JsonConvert.DeserializeObject<List<Type>>(json);
             }
         }
+
+      
 
         public static void UpdateMaterial()
         {
             using (WebClient wc = new WebClient())
             {
-                var json = wc.DownloadString("http://pestova.styleru.net/proga/get_material");
+                var json = wc.DownloadString("http://kornilova.styleru.net/proga/get_material");
                 Materials = JsonConvert.DeserializeObject<List<Material>>(json);
             }
         }
@@ -49,7 +52,7 @@ namespace ERPForYou.Data
         {
             using (WebClient wc = new WebClient())
             {
-                var json = wc.DownloadString("http://pestova.styleru.net/proga/get_agent");
+                var json = wc.DownloadString("http://kornilova.styleru.net/proga/get_agent");
                 Agents = JsonConvert.DeserializeObject<List<Agent>>(json);
             }
         }
@@ -58,7 +61,7 @@ namespace ERPForYou.Data
         {
             using (WebClient wc = new WebClient())
             {
-                var json = wc.DownloadString("http://pestova.styleru.net/proga/get_zakaz");
+                var json = wc.DownloadString("http://kornilova.styleru.net/proga/get_zakaz");
                 Zakazs = JsonConvert.DeserializeObject<List<Zakaz>>(json);
             }
         }
@@ -67,7 +70,7 @@ namespace ERPForYou.Data
         {
             using (WebClient wc = new WebClient())
             {
-                var json = wc.DownloadString("http://pestova.styleru.net/proga/get_agent");
+                var json = wc.DownloadString("http://kornilova.styleru.net/proga/get_agent");
                 Trademarks = JsonConvert.DeserializeObject<List<Trademark>>(json);
             }
         }
@@ -75,7 +78,7 @@ namespace ERPForYou.Data
         {
             using (WebClient wc = new WebClient())
             {
-                var json = wc.DownloadString("http://pestova.styleru.net/proga/get_sklad");
+                var json = wc.DownloadString("http://kornilova.styleru.net/proga/get_sklad");
                 Sklads = JsonConvert.DeserializeObject<List<Sklad>>(json);
             }
         }

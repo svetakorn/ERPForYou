@@ -12,6 +12,7 @@ namespace ERPForYou.Data
         public string Name { get; set; }
         public int Id_ue { get; set; }
         public int Id_type { get; set; }
+        public float Unit_price { get; set; }
 
     }
 }

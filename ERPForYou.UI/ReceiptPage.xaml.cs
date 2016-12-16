@@ -30,7 +30,7 @@ namespace ERPForYou.UI
                                        select new Data.ViewModel.SkladViewModel
                                        {
                                            Material_name = (from c in Data.Repository.Materials where s.Id_material == c.Id select c.Name).Single(),
-                                           Ue_name = (from c in Data.Repository.Ues where s.Id_ue == c.Id select c.Name).Single(),
+                                           Ue_name = (from c in Data.Repository.Ues where ((from d in Data.Repository.Materials where s.Id_material == d.Id select d.Id_ue).Single()) == c.Id select c.Name).Single(),
                                            Quantity = s.Quantity
                                        };
             receiptTable.ItemsSource = result.ToList();

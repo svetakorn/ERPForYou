@@ -24,10 +24,6 @@ namespace ERPForYou.UI
         {
             InitializeComponent();
 
-            Data.Repository.UpdateUe();
-            var resultMeasure = from s in Data.Repository.Ues select s.Name;
-            comboBoxMeasure.ItemsSource = resultMeasure.ToList();
-
             Data.Repository.UpdateMaterial();
             var resultMaterial = from s in Data.Repository.Materials select s.Name;
             comboBoxMaterial.ItemsSource = resultMaterial.ToList();
@@ -42,9 +38,9 @@ namespace ERPForYou.UI
             NavigationService.Navigate(new Uri("EditingType.xaml", UriKind.Relative));
         }
 
-        private void editMeasure_Click(object sender, RoutedEventArgs e)
+        private void editMaterial_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Uri("EditingMeasure.xaml", UriKind.Relative));
+            NavigationService.Navigate(new EditingMaterial(comboBoxType.SelectedItem.ToString()));
         }
     }
 }

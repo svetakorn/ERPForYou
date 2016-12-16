@@ -37,8 +37,8 @@ namespace ERPForYou.UI
             NameValueCollection Info = new NameValueCollection();
             Info.Add("name", NewMeasure.Text);
 
-            byte[] InsertInfo = client.UploadValues("http://pestova.styleru.net/proga/add_ue", "POST", Info);
-            client.Headers.Add("Content-Type", "binary/octet-stream");
+            byte[] InsertInfo = client.UploadValues("http://kornilova.styleru.net/proga/add_ue", "POST", Info);
+            //client.Headers.Add("Content-Type", "binary/octet-stream");
 
             Data.Repository.UpdateUe();
             var result = from s in Data.Repository.Ues select s.Name;
@@ -50,28 +50,30 @@ namespace ERPForYou.UI
         //Изменение единицы измерения
         private void EditButton_Click(object sender, RoutedEventArgs e)
         {
-            NameValueCollection Info = new NameValueCollection();
-            Info.Add("name", listBoxMeasure.SelectedItem.ToString());
-            byte[] RemoveInfo = client.UploadValues("http://pestova.styleru.net/proga/remove_ue", "POST", Info);
+            //NameValueCollection Info = new NameValueCollection();
+            //Info.Add("name", listBoxMeasure.SelectedItem.ToString());
+            //byte[] RemoveInfo = client.UploadValues("http://kornilova.styleru.net/proga/remove_ue", "POST", Info);
 
-            NameValueCollection Info1 = new NameValueCollection();
-            Info1.Add("name", ChangedMeasure.Text);
-            byte[] InsertInfo = client.UploadValues("http://pestova.styleru.net/proga/add_ue", "POST", Info1);
+            //NameValueCollection Info1 = new NameValueCollection();
+            //Info1.Add("name", ChangedMeasure.Text);
+            //byte[] InsertInfo = client.UploadValues("http://kornilova.styleru.net/proga/add_ue", "POST", Info1);
 
-            Data.Repository.UpdateUe();
-            var result = from s in Data.Repository.Ues select s.Name;
-            listBoxMeasure.ItemsSource = result.ToList();
+            //Data.Repository.UpdateUe();
+            //var result = from s in Data.Repository.Ues select s.Name;
+            //listBoxMeasure.ItemsSource = result.ToList();
 
-            ChangedMeasure.Text = "";
+            //ChangedMeasure.Text = "";
         }
 
         //Удаление единицы измерения
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
             NameValueCollection Info = new NameValueCollection();
-
-            Info.Add("id", 9.ToString());
-            byte[] RemoveInfo = client.UploadValues("http://pestova.styleru.net/proga/remove_ue", "POST", Info);
+            string id_str = (from c in Data.Repository.Ues where c.Name == listBoxMeasure.SelectedItem.ToString() select c.Id.ToString()).Single();
+            Info.Add( "id", id_str);
+            
+            byte[] RemoveInfo = client.UploadValues("http://kornilova.styleru.net/proga/remove_ue", "POST", Info);
+            //client.Headers.Add("Content-Type", "binary/octet-stream");
 
             Data.Repository.UpdateUe();
             var result = from s in Data.Repository.Ues select s.Name;
