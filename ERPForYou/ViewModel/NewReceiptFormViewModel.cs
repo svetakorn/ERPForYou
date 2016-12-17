@@ -6,15 +6,12 @@ using System.Threading.Tasks;
 using ERPForYou.ViewModel.ViewModelPattern;
 using System.ComponentModel;
 using System.Windows;
-using System.Collections.Specialized;
-using System.Net;
-using GalaSoft.MvvmLight.Messaging;
 
 namespace ERPForYou.ViewModel
 {
     public class NewReceiptFormViewModel : INotifyPropertyChanged
     {
-        WebClient client = new WebClient();
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         private List<string> _typeList;
@@ -25,6 +22,7 @@ namespace ERPForYou.ViewModel
         //Доступен ли combobox с наименованиями
         public bool IsSelectedType { get; set; }
 
+
         public NewReceiptFormViewModel()
         {
             Repository.UpdateType();
@@ -32,7 +30,7 @@ namespace ERPForYou.ViewModel
             IsSelectedType = false;
         }
 
-        //Привязка к полям ввода
+
         private string _selectedType;
         public string SelectedType
         {
@@ -40,9 +38,7 @@ namespace ERPForYou.ViewModel
             set
             {
                 _selectedType = value;
-                OnPropertyChanged("SelectedType");
                 InitializeMaterials();
-                
             }
         }
 
@@ -56,8 +52,6 @@ namespace ERPForYou.ViewModel
                 ShowUe();
             }
         }
-
-
 
         private string _ue;
         public string Ue
@@ -97,58 +91,6 @@ namespace ERPForYou.ViewModel
             if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        //Привязка к полям ввода
-        private string _quantity;
-        public string Quantity
-        {
-            get { return _quantity; }
-            set
-            {
-                _quantity = value;
-                OnPropertyChanged("Quantity");
-                MyCommand.RaiseCanExecuteChanged();
-            }
-        }
-
-        private string _price;
-        public string Price
-        {
-            get { return _price; }
-            set
-            {
-                _price = value;
-                OnPropertyChanged("Price");
-                MyCommand.RaiseCanExecuteChanged();
-            }
-        }
-
-        #region Command
-
-        private DelegateCommand _myCommand;
-        public DelegateCommand MyCommand
-        {
-            get { return _myCommand ?? (_myCommand = new DelegateCommand(Execute, CanExecute)); }
-        }
-
-        private bool CanExecute(object obj)
-        {
-            return true;
-        }
-
-        private void Execute(object obj)
-        {
-            Messenger.Default.Send<string>(_selectedType);
-        }
-        #endregion
-
-        //private void AddToMaterialTable()
-        //{
-        //        NameValueCollection Info = new NameValueCollection();
-        //        Info.Add("name", NewText);
-
-        //        byte[] InsertInfo = client.UploadValues("http://kornilova.styleru.net/proga/add_material", "POST", Info);
-        //        //client.Headers.Add("Content-Type", "binary/octet-stream");
-        //}
 
     }
 }

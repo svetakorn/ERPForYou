@@ -1,24 +1,19 @@
-﻿<Page
+﻿<Page x:Class="ERPForYou.View.EditingMaterial"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:ERPForYou.View"
-      xmlns:ViewModel="clr-namespace:ERPForYou.ViewModel" x:Class="ERPForYou.View.EditingMaterial"
       mc:Ignorable="d" 
       d:DesignHeight="472" d:DesignWidth="718"
       Title="EditingMaterial" Background="White" FontSize="16">
-
-    <Page.DataContext>
-        <ViewModel:EditingMaterialViewModel/>
-    </Page.DataContext>
 
     <Grid>
         <DataGrid x:Name="dataGridMaterial" HorizontalAlignment="Left" Margin="24,54,0,0" VerticalAlignment="Top" Height="316" Width="668"/>
         <Label x:Name="label" Content="Все наименования выбранного ранее типа" HorizontalAlignment="Left" Margin="24,4,0,0" VerticalAlignment="Top"/>
         <Button x:Name="AddButton" Content="Новое наименование" HorizontalAlignment="Left" Margin="24,410,0,0" VerticalAlignment="Top" Width="238" Height="39" Click="AddButton_Click"/>
         <Button x:Name="button1" Content="Удалить выделенное" HorizontalAlignment="Left" Margin="424,410,0,0" VerticalAlignment="Top" Width="268" Height="40"/>
-        <Label x:Name="labelType" Content="{Binding SelectedType, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="356,4,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="labelType" Content="" HorizontalAlignment="Left" Margin="356,4,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Page>

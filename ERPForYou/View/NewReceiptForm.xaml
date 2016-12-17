@@ -32,10 +32,12 @@
         <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="22" Margin="30,40.5,0,0" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="button" Content="ОК" HorizontalAlignment="Left" Margin="22,21.5,0,0" Grid.Row="6" VerticalAlignment="Top" Width="120" Height="30" FontSize="16"/>
         <Button x:Name="button_Copy" Content="Отмена" HorizontalAlignment="Left" Margin="178,21.5,0,0" Grid.Row="6" VerticalAlignment="Top" Width="120" Height="30" FontSize="16"/>
-        <Button x:Name="editType" Content="Внести изменения в список типов" HorizontalAlignment="Left" Margin="359,36,0,0" Grid.Row="1" VerticalAlignment="Top" Width="272" Height="22" Click="editType_Click"/>
+        <Button x:Name="editType" Command="{Binding MyCommand}" Content="Внести изменения в список типов" HorizontalAlignment="Left" Margin="359,36,0,0" Grid.Row="1" VerticalAlignment="Top" Width="272" Height="22" Click="editType_Click"/>
         <ComboBox x:Name="comboBoxMaterial" SelectedItem="{Binding SelectedMaterial}" IsEnabled="{Binding IsSelectedType}" ItemsSource="{Binding MaterialList}" HorizontalAlignment="Left" Margin="30,37,0,0" Grid.Row="2" VerticalAlignment="Top" Width="276" Height="22"/>
-        <Button x:Name="editMaterial" Command="{Binding MyCommand}" IsEnabled="{Binding IsSelectedType}" Content="Внести изменения в список наименований" HorizontalAlignment="Left" Margin="359,37,0,0" Grid.Row="2" VerticalAlignment="Top" Width="272" Height="22" Click="editMaterial_Click"/>
+        <Button x:Name="editMaterial" IsEnabled="{Binding IsSelectedType}" Content="Внести изменения в список наименований" HorizontalAlignment="Left" Margin="359,37,0,0" Grid.Row="2" VerticalAlignment="Top" Width="272" Height="22" Click="editMaterial_Click"/>
         <TextBox x:Name="textBoxUe" Text="{Binding Ue, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="22" Margin="30,40,0,0" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="label4_Copy" Content="Цена за единицу:" HorizontalAlignment="Left" Margin="30,1.5,0,0" Grid.Row="5" VerticalAlignment="Top" FontSize="16" Height="32" Width="142"/>
+        <TextBox x:Name="textBox_Copy1" HorizontalAlignment="Left" Height="22" Margin="30,39.5,0,0" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
 
     </Grid>
 </Page>
