@@ -23,12 +23,13 @@ namespace ERPForYou.View
         public EditingMaterial(string type)
         {
             InitializeComponent();
-            labelType.Content = type;
+            textBox.IsReadOnly = true;
+            textBox.Text = type;
         }
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new AddingNewMaterial(labelType.Content.ToString()));
+            NavigationService.Navigate(new AddingNewMaterial(textBox.Text.ToString()));
         }
     }
 }

@@ -95,6 +95,7 @@
     <Compile Include="ViewModel\ReceiptViewModel.cs" />
     <Compile Include="ViewModel\Repository.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
+    <Compile Include="ViewModel\ViewModelPattern\MaterialViewModelPattern.cs" />
     <Compile Include="ViewModel\ViewModelPattern\SkladViewModelPattern.cs" />
     <Compile Include="View\AddingNewMaterial.xaml.cs">
       <DependentUpon>AddingNewMaterial.xaml</DependentUpon>
