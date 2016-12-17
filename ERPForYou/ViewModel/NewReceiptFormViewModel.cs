@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using ERPForYou.ViewModel.ViewModelPattern;
 using System.ComponentModel;
 using System.Windows;
+using GalaSoft.MvvmLight.Messaging;
 
 namespace ERPForYou.ViewModel
 {
@@ -91,6 +92,23 @@ namespace ERPForYou.ViewModel
             if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));
         }
 
+        #region Command
 
+        private DelegateCommand _myCommand;
+        public DelegateCommand MyCommand
+        {
+            get { return _myCommand ?? (_myCommand = new DelegateCommand(Execute, CanExecute)); }
+        }
+
+        private bool CanExecute(object obj)
+        {
+            return true;
+        }
+
+        private void Execute(object obj)
+        {
+            //Messenger.Default.Send<string>(_selectedType);
+        }
+        #endregion
     }
 }

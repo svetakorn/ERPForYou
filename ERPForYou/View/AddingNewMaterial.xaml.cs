@@ -20,9 +20,11 @@ namespace ERPForYou.View
     /// </summary>
     public partial class AddingNewMaterial : Page
     {
-        public AddingNewMaterial()
+        public AddingNewMaterial(string type)
         {
             InitializeComponent();
+            textBoxType.IsReadOnly = true;
+            textBoxType.Text = type;
         }
 
         private void editMeasure_Click(object sender, RoutedEventArgs e)

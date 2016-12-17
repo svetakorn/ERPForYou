@@ -33,7 +33,7 @@ namespace ERPForYou.View
 
         private void editMaterial_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Uri("View/EditingMaterial.xaml", UriKind.Relative));
+            NavigationService.Navigate(new EditingMaterial(comboBoxType.SelectedItem.ToString()));
         }
     }
 }

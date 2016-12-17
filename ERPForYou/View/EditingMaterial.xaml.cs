@@ -20,14 +20,15 @@ namespace ERPForYou.View
     /// </summary>
     public partial class EditingMaterial : Page
     {
-        public EditingMaterial()
+        public EditingMaterial(string type)
         {
             InitializeComponent();
+            labelType.Content = type;
         }
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Uri("View/AddingNewMaterial.xaml", UriKind.Relative));
+            NavigationService.Navigate(new AddingNewMaterial(labelType.Content.ToString()));
         }
     }
 }
