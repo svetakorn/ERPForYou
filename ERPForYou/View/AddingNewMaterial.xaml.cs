@@ -31,5 +31,11 @@ namespace ERPForYou.View
         {
            NavigationService.Navigate(new Uri("View/EditingMeasure.xaml", UriKind.Relative));
         }
+
+        private void CancelButton_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("View/NewReceiptForm.xaml", UriKind.Relative));
+        }
+
     }
 }

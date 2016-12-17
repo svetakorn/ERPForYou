@@ -22,16 +22,15 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Label x:Name="label" Content="Группа:" HorizontalAlignment="Left" Margin="36,10,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="textBoxType" Text="{Binding Type, Mode=TwoWay}" HorizontalAlignment="Left" Height="24" Margin="36,48,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="434"/>
+        <TextBox x:Name="textBoxType" Text="{Binding Type, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="24" Margin="36,48,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="434"/>
         <Label x:Name="label_Copy" Content="Наименование:" HorizontalAlignment="Left" Margin="36,22.5,0,0" VerticalAlignment="Top" Grid.Row="1"/>
-        <TextBox x:Name="textBoxName" Text="{Binding Name}" HorizontalAlignment="Left" Height="24" Margin="36,60.5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="434" Grid.Row="1"/>
+        <TextBox x:Name="textBoxName" Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="24" Margin="36,60.5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="434" Grid.Row="1"/>
         <Label x:Name="label_Copy1" Content="Единица измерения:" HorizontalAlignment="Left" Margin="36,23,0,0" VerticalAlignment="Top" Grid.Row="2"/>
-        <Label x:Name="label_Copy2" Content="Цена за единицу:" HorizontalAlignment="Left" Margin="36,22.5,0,0" VerticalAlignment="Top" Grid.Row="3"/>
-        <TextBox x:Name="textBoxPrice" Text="{Binding Price}" HorizontalAlignment="Left" Height="24" Margin="36,60.5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="434" Grid.Row="3"/>
+        <Label x:Name="label_Copy2" Content="Цена за единицу (в рублях):" HorizontalAlignment="Left" Margin="36,22.5,0,0" VerticalAlignment="Top" Grid.Row="3"/>
+        <TextBox x:Name="textBoxPrice" Text="{Binding Price, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="24" Margin="36,60.5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="434" Grid.Row="3"/>
         <Button x:Name="AddButton" Command="{Binding MyCommand}" Content="Добавить" HorizontalAlignment="Left" Margin="36,32.5,0,0" Grid.Row="4" VerticalAlignment="Top" Width="213" Height="38"/>
-        <Button x:Name="CancelButton" Content="Отмена" HorizontalAlignment="Left" Margin="446,32.5,0,0" Grid.Row="4" VerticalAlignment="Top" Width="213" Height="38"/>
-        <ComboBox x:Name="comboBoxMeasure" SelectedItem="{Binding SelectedUe}" ItemsSource="{Binding UeList, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="40,59,0,0" Grid.Row="2" VerticalAlignment="Top" Width="285"/>
+        <Button x:Name="CancelButton" Content="Назад" HorizontalAlignment="Left" Margin="446,32.5,0,0" Grid.Row="4" VerticalAlignment="Top" Width="213" Height="38" Click="CancelButton_Click"/>
+        <ComboBox x:Name="comboBoxMeasure" SelectedItem="{Binding SelectedUe, UpdateSourceTrigger=PropertyChanged}" ItemsSource="{Binding UeList, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="40,59,0,0" Grid.Row="2" VerticalAlignment="Top" Width="285"/>
         <Button x:Name="editMeasure" Content="Внести изменения в список единиц" HorizontalAlignment="Left" Margin="361,59,0,0" Grid.Row="2" VerticalAlignment="Top" Width="317" Click="editMeasure_Click"/>
-
     </Grid>
 </Page>

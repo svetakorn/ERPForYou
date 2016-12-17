@@ -8,6 +8,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Navigation;
 
 namespace ERPForYou.ViewModel
 {
@@ -23,9 +24,41 @@ namespace ERPForYou.ViewModel
             UeList = new ObservableCollection<string>((from t in Repository.Ues select t.Name).ToList());
         }
 
-        public string Name { get; set; }
-        public string Price { get; set; }
-        public string Type { get; set; }
+        private string _name;
+        public string Name
+        {
+            get { return _name; }
+            set
+            {
+                _name = value;
+                OnPropertyChanged("Name");
+            }
+        }
+
+
+        private string _type;
+        public string Type
+        {
+            get { return _type; }
+            set
+            {
+                _type = value;
+                OnPropertyChanged("Type");
+            }
+        }
+
+
+        private float _price;
+        public float Price
+        {
+            get { return _price; }
+            set
+            {
+                _price = value;
+                OnPropertyChanged("Price");
+            }
+        }
+
 
         private string _selectedUe;
         public string SelectedUe
@@ -34,8 +67,10 @@ namespace ERPForYou.ViewModel
             set
             {
                 _selectedUe = value;
+                OnPropertyChanged("SelectedUe");
             }
         }
+
 
         protected virtual void OnPropertyChanged(string propertyName)
         {
@@ -68,19 +103,24 @@ namespace ERPForYou.ViewModel
             var existingNames = (from m in Repository.Materials select m.Name).ToList();
             foreach (var item in existingNames)
             {
-                if (item.Trim() == Name) flag = false;
+                if (item.Trim() == _name) flag = false;
             }
-            if (flag == true && !string.IsNullOrWhiteSpace(Name) && !string.IsNullOrEmpty(Price) && !string.IsNullOrEmpty(SelectedUe) && !string.IsNullOrEmpty(Type))
+            if (flag == true && !string.IsNullOrWhiteSpace(_name) && (_price > 0) && !string.IsNullOrEmpty(_selectedUe) && !string.IsNullOrEmpty(_type))
             {
                 NameValueCollection Info = new NameValueCollection();
-                Info.Add("name", Name);
-                Info.Add("id_type", (from t in Repository.Types where t.Name == Type select t.Id.ToString()).Single());
-                Info.Add("id_ue", (from t in Repository.Ues where t.Name == SelectedUe select t.Id.ToString()).Single());
-                Info.Add("unit_price", Price);
+                Info.Add("name", _name);
+                Info.Add("id_type", (from t in Repository.Types where t.Name == _type select t.Id.ToString()).Single());
+                Info.Add("id_ue", (from t in Repository.Ues where t.Name == _selectedUe select t.Id.ToString()).Single());
+                Info.Add("unit_price", _price.ToString());
 
                 byte[] InsertInfo = client.UploadValues("http://kornilova.styleru.net/proga/add_material", "POST", Info);
                 //client.Headers.Add("Content-Type", "binary/octet-stream");
-
+                _name = "";
+                _price = 0;
+                _selectedUe = "";
+                OnPropertyChanged("Name");
+                OnPropertyChanged("Price");
+                OnPropertyChanged("SelectedUe");
             }
             else
             {
