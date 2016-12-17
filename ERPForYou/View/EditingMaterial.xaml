@@ -19,6 +19,6 @@
         <Label x:Name="label" Content="Все наименования выбранного ранее типа" HorizontalAlignment="Left" Margin="24,4,0,0" VerticalAlignment="Top"/>
         <Button x:Name="AddButton" Content="Новое наименование" HorizontalAlignment="Left" Margin="24,410,0,0" VerticalAlignment="Top" Width="192" Height="39" Click="AddButton_Click"/>
         <Button x:Name="ChangeButton" Content="Изменить выделенное" HorizontalAlignment="Left" Margin="496,410,0,0" VerticalAlignment="Top" Width="196" Height="40"/>
-        <Button x:Name="Refresh" Command="{Binding RefreshCommand}" Content="Обновить таблицу" HorizontalAlignment="Left" Margin="252,410,0,0" VerticalAlignment="Top" Width="210" Height="39"/>
+        <Button x:Name="Refresh" Command="{Binding RefreshCommand}" Content="Показать/обновить таблицу" HorizontalAlignment="Left" Margin="239,410,0,0" VerticalAlignment="Top" Width="234" Height="39"/>
     </Grid>
 </Page>

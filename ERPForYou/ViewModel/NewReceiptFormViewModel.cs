@@ -7,11 +7,14 @@ using ERPForYou.ViewModel.ViewModelPattern;
 using System.ComponentModel;
 using System.Windows;
 using GalaSoft.MvvmLight.Messaging;
+using System.Collections.Specialized;
+using System.Net;
 
 namespace ERPForYou.ViewModel
 {
     public class NewReceiptFormViewModel : INotifyPropertyChanged
     {
+        WebClient client = new WebClient();
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -65,6 +68,17 @@ namespace ERPForYou.ViewModel
             }
         }
 
+        private int _quantity;
+        public int Quantity
+        {
+            get { return _quantity; }
+            set
+            {
+                _quantity = value;
+                OnPropertyChanged("Quantity");
+            }
+        }
+
         private void ShowUe()
         {
             _ue = (from u in Repository.Ues where (from m in Repository.Materials where m.Name == SelectedMaterial select m.Id_ue).Single() == u.Id select u.Name).Single();
@@ -94,10 +108,10 @@ namespace ERPForYou.ViewModel
 
         #region Command
 
-        private DelegateCommand _myCommand;
-        public DelegateCommand MyCommand
+        private DelegateCommand _addCommand;
+        public DelegateCommand AddCommand
         {
-            get { return _myCommand ?? (_myCommand = new DelegateCommand(Execute, CanExecute)); }
+            get { return _addCommand ?? (_addCommand = new DelegateCommand(Execute, CanExecute)); }
         }
 
         private bool CanExecute(object obj)
@@ -107,8 +121,33 @@ namespace ERPForYou.ViewModel
 
         private void Execute(object obj)
         {
-            //Messenger.Default.Send<string>(_selectedType);
+            AddToSklad();
         }
         #endregion
+
+        private void AddToSklad()
+        {
+            if (!string.IsNullOrWhiteSpace(_selectedType) && (_quantity > 0) && !string.IsNullOrEmpty(_selectedMaterial))
+            {
+                NameValueCollection Info = new NameValueCollection();
+                Info.Add("id_material", (from t in Repository.Materials where t.Name == _selectedMaterial select t.Id.ToString()).Single());
+                Info.Add("quantity", _quantity.ToString());
+
+                byte[] InsertInfo = client.UploadValues("http://kornilova.styleru.net/proga/add_to_sklad", "POST", Info);
+                //client.Headers.Add("Content-Type", "binary/octet-stream");
+                _selectedType = "";
+                _quantity = 0;
+                _selectedMaterial = "";
+                _ue = "";
+                OnPropertyChanged("SelectedType");
+                OnPropertyChanged("SelectedMaterial");
+                OnPropertyChanged("Quantity");
+                OnPropertyChanged("Ue");
+            }
+            else
+            {
+                MessageBox.Show("Данные введены не полностью или неверно!");
+            }
+        }
     }
 }

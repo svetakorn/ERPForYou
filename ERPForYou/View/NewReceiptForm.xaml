@@ -29,8 +29,8 @@
         <Label x:Name="label3" Content="Единица измерения:" HorizontalAlignment="Left" Margin="30,2,0,0" Grid.Row="3" VerticalAlignment="Top" FontSize="16" Height="32" Width="160"/>
         <Label x:Name="label4" Content="Количество:" HorizontalAlignment="Left" Margin="30,2.5,0,0" Grid.Row="4" VerticalAlignment="Top" FontSize="16" Height="32" Width="99"/>
         <ComboBox x:Name="comboBoxType" SelectedItem="{Binding SelectedType}" ItemsSource="{Binding TypeList}" HorizontalAlignment="Left" Margin="30,36,0,0" Grid.Row="1" VerticalAlignment="Top" Width="276" Height="22"/>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="22" Margin="30,40.5,0,0" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="button" Content="ОК" HorizontalAlignment="Left" Margin="22,21.5,0,0" Grid.Row="6" VerticalAlignment="Top" Width="120" Height="30" FontSize="16"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Text="{Binding Quantity, UpdateSourceTrigger=PropertyChanged}" Height="22" Margin="30,40.5,0,0" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="button" Content="ОК" Command="{Binding AddCommand}" HorizontalAlignment="Left" Margin="22,21.5,0,0" Grid.Row="6" VerticalAlignment="Top" Width="120" Height="30" FontSize="16"/>
         <Button x:Name="button_Copy" Content="Отмена" HorizontalAlignment="Left" Margin="178,21.5,0,0" Grid.Row="6" VerticalAlignment="Top" Width="120" Height="30" FontSize="16"/>
         <Button x:Name="editType" Command="{Binding MyCommand}" Content="Внести изменения в список типов" HorizontalAlignment="Left" Margin="359,36,0,0" Grid.Row="1" VerticalAlignment="Top" Width="272" Height="22" Click="editType_Click"/>
         <ComboBox x:Name="comboBoxMaterial" SelectedItem="{Binding SelectedMaterial}" IsEnabled="{Binding IsSelectedType}" ItemsSource="{Binding MaterialList}" HorizontalAlignment="Left" Margin="30,37,0,0" Grid.Row="2" VerticalAlignment="Top" Width="276" Height="22"/>
