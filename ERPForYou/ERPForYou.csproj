@@ -87,11 +87,13 @@
     <Compile Include="Model\UE.cs" />
     <Compile Include="Model\Zakaz.cs" />
     <Compile Include="ViewModel\DelegateCommand.cs" />
+    <Compile Include="ViewModel\EditingMaterialViewModel.cs" />
     <Compile Include="ViewModel\EditingMeasureViewModel.cs" />
     <Compile Include="ViewModel\EditingTypeViewModel.cs" />
     <Compile Include="ViewModel\NewReceiptFormViewModel.cs" />
     <Compile Include="ViewModel\ReceiptViewModel.cs" />
     <Compile Include="ViewModel\Repository.cs" />
+    <Compile Include="ViewModel\ViewModelCommunication.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Compile Include="ViewModel\ViewModelPattern\SkladViewModelPattern.cs" />
     <Compile Include="View\AddingNewMaterial.xaml.cs">
