@@ -13,7 +13,7 @@
                 <Label x:Name="label1" Content="Приход" HorizontalAlignment="Left" Margin="15 0" VerticalAlignment="Center" Foreground="White" FontFamily="Segoe UI Light" FontSize="16"/>
             </Grid>
             <Grid Name="expenditureNav" Height="40" Margin="0,50,0,0" VerticalAlignment="Top" MouseEnter="expenditureNav_MouseEnter" MouseLeave="expenditureNav_MouseLeave" MouseDown="expenditureNav_MouseDown">
-                <Label x:Name="label2" Content="Расход" HorizontalAlignment="Left" Margin="15 0" VerticalAlignment="Center" Foreground="White" FontFamily="Segoe UI Light" FontSize="16"/>
+                <Label x:Name="label2" Content="Заказы" HorizontalAlignment="Left" Margin="15 0" VerticalAlignment="Center" Foreground="White" FontFamily="Segoe UI Light" FontSize="16"/>
             </Grid>
             <Grid Name="remainderNav" Height="40" Margin="0,90,0,0" VerticalAlignment="Top" MouseEnter="remainderNav_MouseEnter" MouseLeave="remainderNav_MouseLeave" MouseDown="remainderNav_MouseDown">
                 <Label x:Name="label3" Content="Остаток" HorizontalAlignment="Left" Margin="15 0" VerticalAlignment="Center" Foreground="White" FontFamily="Segoe UI Light" FontSize="16"/>

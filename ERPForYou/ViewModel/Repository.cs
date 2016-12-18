@@ -19,6 +19,7 @@ namespace ERPForYou.ViewModel
 
         public static List<Zakaz> Zakazs;
         public static List<Sklad> Sklads;
+        public static List<Zakaz_material> Zakaz_materials;
 
         public static void UpdateUe()
         {
@@ -46,6 +47,15 @@ namespace ERPForYou.ViewModel
             {
                 var json = wc.DownloadString("http://kornilova.styleru.net/proga/get_material");
                 Materials = JsonConvert.DeserializeObject<List<Material>>(json);
+            }
+        }
+
+        public static void UpdateZakazMaterial()
+        {
+            using (WebClient wc = new WebClient())
+            {
+                var json = wc.DownloadString("http://kornilova.styleru.net/proga/get_zakaz_material");
+                Zakaz_materials = JsonConvert.DeserializeObject<List<Zakaz_material>>(json);
             }
         }
 

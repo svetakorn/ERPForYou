@@ -13,5 +13,6 @@ namespace ERPForYou.Model
         public int Quantity { get; set; }
         public DateTime Datetime { get; set; }
         public int Id { get; set; }
+        public float Price { get; set; }
     }
 }

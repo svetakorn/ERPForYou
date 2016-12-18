@@ -92,12 +92,14 @@
     <Compile Include="ViewModel\EditingMaterialViewModel.cs" />
     <Compile Include="ViewModel\EditingMeasureViewModel.cs" />
     <Compile Include="ViewModel\EditingTypeViewModel.cs" />
+    <Compile Include="ViewModel\ExpenditureViewModel.cs" />
     <Compile Include="ViewModel\NewReceiptFormViewModel.cs" />
     <Compile Include="ViewModel\ReceiptViewModel.cs" />
     <Compile Include="ViewModel\Repository.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Compile Include="ViewModel\ViewModelPattern\MaterialViewModelPattern.cs" />
     <Compile Include="ViewModel\ViewModelPattern\SkladViewModelPattern.cs" />
+    <Compile Include="ViewModel\ViewModelPattern\ZakazViewModelPattern.cs" />
     <Compile Include="View\AddingNewMaterial.xaml.cs">
       <DependentUpon>AddingNewMaterial.xaml</DependentUpon>
     </Compile>
