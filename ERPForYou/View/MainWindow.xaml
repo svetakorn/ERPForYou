@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ERPForYou"
         mc:Ignorable="d"
-        Title="  ERPForYou" Height="500" Width="900" WindowStyle="SingleBorderWindow">
+        Title="  ERPForYou" Height="500" Width="900" WindowStyle="SingleBorderWindow" Icon="icon/warehouse.ico">
 
     <Grid>
         <Grid Name="sideBar" Background="#FF14263B" Width="175" HorizontalAlignment="Left">
