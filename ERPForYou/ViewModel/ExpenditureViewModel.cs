@@ -28,7 +28,8 @@ namespace ERPForYou.ViewModel
                         Agent = (from c in Repository.Agents where s.Id_agent == c.Id select c.Name).Single(),
                         Trademark = (from c in Repository.Trademarks where s.Id_trademark == c.Id select c.Name).Single(),
                         Price = s.Price,
-                        Quantity = s.Quantity
+                        Quantity = s.Quantity,
+                        Number = s.Num_zakaz
                     }).ToList();
         }
     }

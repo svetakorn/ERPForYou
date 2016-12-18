@@ -16,18 +16,13 @@ using System.Windows.Shapes;
 namespace ERPForYou.View
 {
     /// <summary>
-    /// Логика взаимодействия для ExpenditurePage.xaml
+    /// Логика взаимодействия для EditingType.xaml
     /// </summary>
-    public partial class ExpenditurePage : Page
+    public partial class EditingAgent : Page
     {
-        public ExpenditurePage()
+        public EditingAgent()
         {
             InitializeComponent();
-        }
-
-        private void newExpButton_Click(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(new Uri("View/NewExpenditureForm.xaml", UriKind.Relative));
         }
     }
 }

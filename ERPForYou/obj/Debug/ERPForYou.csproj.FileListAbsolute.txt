@@ -88,3 +88,9 @@ C:\Users\mvideo\Desktop\ERP\102\ERPForYou\obj\Debug\View\EditingMaterial.g.cs
 C:\Users\mvideo\Desktop\ERP\102\ERPForYou\obj\Debug\View\EditingMaterial.baml
 C:\Users\mvideo\Desktop\ERP\102\ERPForYou\obj\Debug\View\EditingMeasure.g.cs
 C:\Users\mvideo\Desktop\ERP\102\ERPForYou\obj\Debug\View\EditingMeasure.baml
+C:\Users\mvideo\Desktop\ERP\102\ERPForYou\obj\Debug\View\NewExpenditureForm.g.cs
+C:\Users\mvideo\Desktop\ERP\102\ERPForYou\obj\Debug\View\NewExpenditureForm.baml
+C:\Users\mvideo\Desktop\ERP\102\ERPForYou\obj\Debug\View\EditingAgent.g.cs
+C:\Users\mvideo\Desktop\ERP\102\ERPForYou\obj\Debug\View\EditingTrademark.g.cs
+C:\Users\mvideo\Desktop\ERP\102\ERPForYou\obj\Debug\View\EditingAgent.baml
+C:\Users\mvideo\Desktop\ERP\102\ERPForYou\obj\Debug\View\EditingTrademark.baml

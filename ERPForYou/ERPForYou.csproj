@@ -89,10 +89,13 @@
     <Compile Include="Model\Zakaz_material.cs" />
     <Compile Include="ViewModel\AddingNewMaterialViewModel.cs" />
     <Compile Include="ViewModel\DelegateCommand.cs" />
+    <Compile Include="ViewModel\EditingAgentViewModel.cs" />
     <Compile Include="ViewModel\EditingMaterialViewModel.cs" />
     <Compile Include="ViewModel\EditingMeasureViewModel.cs" />
+    <Compile Include="ViewModel\EditingTrademarkViewModel.cs" />
     <Compile Include="ViewModel\EditingTypeViewModel.cs" />
     <Compile Include="ViewModel\ExpenditureViewModel.cs" />
+    <Compile Include="ViewModel\NewExpenditureFormViewModel.cs" />
     <Compile Include="ViewModel\NewReceiptFormViewModel.cs" />
     <Compile Include="ViewModel\ReceiptViewModel.cs" />
     <Compile Include="ViewModel\Repository.cs" />
@@ -109,11 +112,20 @@
     <Compile Include="View\EditingMeasure.xaml.cs">
       <DependentUpon>EditingMeasure.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\EditingAgent.xaml.cs">
+      <DependentUpon>EditingAgent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\EditingTrademark.xaml.cs">
+      <DependentUpon>EditingTrademark.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\EditingType.xaml.cs">
       <DependentUpon>EditingType.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ExpenditurePage.xaml.cs">
       <DependentUpon>ExpenditurePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\NewExpenditureForm.xaml.cs">
+      <DependentUpon>NewExpenditureForm.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\NewReceiptForm.xaml.cs">
       <DependentUpon>NewReceiptForm.xaml</DependentUpon>
@@ -136,6 +148,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\EditingAgent.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\EditingTrademark.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="View\EditingType.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -156,6 +176,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\NewExpenditureForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\NewReceiptForm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

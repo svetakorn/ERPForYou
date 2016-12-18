@@ -81,7 +81,7 @@ namespace ERPForYou.ViewModel
         {
             using (WebClient wc = new WebClient())
             {
-                var json = wc.DownloadString("http://kornilova.styleru.net/proga/get_agent");
+                var json = wc.DownloadString("http://kornilova.styleru.net/proga/get_trademark");
                 Trademarks = JsonConvert.DeserializeObject<List<Trademark>>(json);
             }
         }
