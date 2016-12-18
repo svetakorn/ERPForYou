@@ -36,11 +36,13 @@ namespace ERPForYou.ViewModel
         private List<SkladViewModelPattern> SkladRequest()
         {
             return (from s in Repository.Sklads
+                    orderby s.DateTime descending
                     select new SkladViewModelPattern
                     {
                         MaterialName = (from c in Repository.Materials where s.Id_material == c.Id select c.Name).Single(),
                         UeName = (from c in Repository.Ues where ((from d in Repository.Materials where s.Id_material == d.Id select d.Id_ue).Single()) == c.Id select c.Name).Single(),
-                        Quantity = s.Quantity
+                        Quantity = s.Quantity,
+                        DateTime = s.DateTime
                     }).ToList();
         }
     }

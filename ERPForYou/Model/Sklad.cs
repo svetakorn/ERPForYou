@@ -11,5 +11,6 @@ namespace ERPForYou.Model
         public int Type { get; set; }
         public int Id_material { get; set; }
         public int Quantity { get; set; }
+        public DateTime DateTime { get; set; }
     }
 }

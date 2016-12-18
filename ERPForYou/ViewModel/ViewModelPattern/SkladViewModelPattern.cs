@@ -9,6 +9,7 @@ namespace ERPForYou.ViewModel.ViewModelPattern
 {
     public class SkladViewModelPattern
     {
+        public DateTime DateTime { get; set; }
         public string MaterialName { get; set; }
 
         public string UeName { get; set; }

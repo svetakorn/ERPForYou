@@ -22,6 +22,7 @@ namespace ERPForYou.ViewModel
         private List<ZakazViewModelPattern> ZakazRequest()
         {
             return (from s in Repository.Zakazs
+                    orderby s.Datetime descending
                     select new ZakazViewModelPattern
                     {
                         DateTime = s.Datetime,
