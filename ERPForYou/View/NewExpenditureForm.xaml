@@ -36,5 +36,6 @@
             <Label x:Name="label10" Content="Количество позиций:" HorizontalAlignment="Left" Margin="20 0" VerticalAlignment="Center"/>
             <TextBox x:Name="textBox9" Text="{Binding Quantity}" HorizontalAlignment="Left" Height="23" Margin="195 0" TextWrapping="Wrap" VerticalAlignment="Center" Width="221"/>
         </Grid>
+        <Button x:Name="button" Content="Отмена" HorizontalAlignment="Left" Margin="617,420,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
     </Grid>
 </Page>

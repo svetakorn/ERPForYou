@@ -124,7 +124,14 @@ namespace ERPForYou.ViewModel
             }
             else
             {
+                _name = "";
+                _price = 0;
+                _selectedUe = "";
+                OnPropertyChanged("Name");
+                OnPropertyChanged("Price");
+                OnPropertyChanged("SelectedUe");
                 MessageBox.Show("Такая единица измерения уже существует в базе данных или данные введены не полностью!");
+                
             }
         }
     }

@@ -50,5 +50,10 @@ namespace ERPForYou.View
             }
            
         }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("View/ExpenditurePage.xaml", UriKind.Relative));
+        }
     }
 }

@@ -35,5 +35,10 @@ namespace ERPForYou.View
         {
             NavigationService.Navigate(new EditingMaterial(comboBoxType.SelectedItem.ToString()));
         }
+
+        private void button_Copy_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("View/ReceiptPage.xaml", UriKind.Relative));
+        }
     }
 }

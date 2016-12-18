@@ -31,5 +31,10 @@ namespace ERPForYou.View
         {
             NavigationService.Navigate(new AddingNewMaterial(textBox.Text.ToString()));
         }
+
+        private void ChangeButton_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("View/NewReceiptForm.xaml", UriKind.Relative));
+        }
     }
 }

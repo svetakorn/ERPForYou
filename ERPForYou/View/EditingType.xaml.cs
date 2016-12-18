@@ -24,5 +24,10 @@ namespace ERPForYou.View
         {
             InitializeComponent();
         }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("View/NewReceiptForm.xaml", UriKind.Relative));
+        }
     }
 }

@@ -34,6 +34,7 @@
             </Grid>-->
 
         </Grid>
-        <ListBox x:Name="listBoxMeasure" ItemsSource="{Binding MeasureList, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding SelectedItem}" HorizontalAlignment="Left" Margin="25,25,0,25" Width="304"/>
+        <ListBox x:Name="listBoxMeasure" ItemsSource="{Binding MeasureList, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding SelectedItem}" HorizontalAlignment="Left" Margin="25,57,0,25" Width="304"/>
+        <Button x:Name="button" Content="Назад" HorizontalAlignment="Left" Margin="25,10,0,0" VerticalAlignment="Top" Width="84" Click="button_Click"/>
     </Grid>
 </Page>

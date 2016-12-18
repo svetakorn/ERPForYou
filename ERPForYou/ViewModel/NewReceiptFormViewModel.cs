@@ -127,6 +127,7 @@ namespace ERPForYou.ViewModel
 
         private void AddToSklad()
         {
+            Repository.UpdateMaterial();
             if (!string.IsNullOrWhiteSpace(_selectedType) && (_quantity > 0) && !string.IsNullOrEmpty(_selectedMaterial))
             {
                 NameValueCollection Info = new NameValueCollection();
@@ -146,6 +147,14 @@ namespace ERPForYou.ViewModel
             }
             else
             {
+                _selectedType = "";
+                _quantity = 0;
+                _selectedMaterial = "";
+                _ue = "";
+                OnPropertyChanged("SelectedType");
+                OnPropertyChanged("SelectedMaterial");
+                OnPropertyChanged("Quantity");
+                OnPropertyChanged("Ue");
                 MessageBox.Show("Данные введены не полностью или неверно!");
             }
         }
