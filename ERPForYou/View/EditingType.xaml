@@ -22,8 +22,8 @@
             </Grid>
             <Grid HorizontalAlignment="Left" Height="180" VerticalAlignment="Top" Width="359" Margin="0,180,0,0">
                 <Label x:Name="label1" Content="Изменить существующий тип" HorizontalAlignment="Left" Margin="10,17,0,0" VerticalAlignment="Top"/>
-                <TextBox x:Name="ChangedType" HorizontalAlignment="Left" Height="22" Margin="10,91,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="339"/>
-                <Button x:Name="EditButton" Content="Изменить" HorizontalAlignment="Left" Margin="10,131,0,0" VerticalAlignment="Top" Width="162" Height="35"/>
+                <TextBox x:Name="ChangedType" Text="{Binding ChangedName, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="22" Margin="10,91,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="339"/>
+                <Button x:Name="EditButton" Command="{Binding EditCommand}" Content="Изменить" HorizontalAlignment="Left" Margin="10,131,0,0" VerticalAlignment="Top" Width="162" Height="35"/>
                 <Label x:Name="label2" Content="Выберите тип из списка и введите ниже его новое название" HorizontalAlignment="Left" Margin="10,53,0,0" VerticalAlignment="Top" FontSize="11"/>
             </Grid>
             <!--<Grid HorizontalAlignment="Left" Height="148" Margin="0,324,0,0" VerticalAlignment="Top" Width="359">
@@ -34,7 +34,7 @@
             </Grid>-->
 
         </Grid>
-        <ListBox x:Name="listBoxType" ItemsSource="{Binding TypeList, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="25,25,0,25" Width="304"/>
+        <ListBox x:Name="listBoxType" SelectedItem="{Binding SelectedItem}" ItemsSource="{Binding TypeList, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="25,25,0,25" Width="304"/>
 
 
     </Grid>

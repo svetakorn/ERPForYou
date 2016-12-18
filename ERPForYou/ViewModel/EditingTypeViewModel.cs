@@ -74,6 +74,25 @@ namespace ERPForYou.ViewModel
         }
         #endregion
 
+        #region Command
+
+        private DelegateCommand _editCommand;
+        public DelegateCommand EditCommand
+        {
+            get { return _editCommand ?? (_editCommand = new DelegateCommand(editExecute, editCanExecute)); }
+        }
+
+        private bool editCanExecute(object obj)
+        {
+            return true;
+        }
+
+        private void editExecute(object obj)
+        {
+            //EditType();
+        }
+        #endregion
+
         private void AddNewType()
         {
             bool flag = true;
@@ -100,6 +119,42 @@ namespace ERPForYou.ViewModel
                 _newText = "";
                 OnPropertyChanged("NewText");
             }
+        }
+
+        private string _selectedItem;
+
+        public string SelectedItem
+        {
+            get { return _selectedItem; }
+            set { _selectedItem = value; OnPropertyChanged("SelectedItem"); }
+        }
+
+        private string _changedName;
+
+        public string ChangedName
+        {
+            get { return _changedName; }
+            set { _changedName = value; OnPropertyChanged("ChangedItem"); }
+        }
+
+
+        private void EditType()
+        {
+            if (_selectedItem != null && _changedName != null)
+            {
+
+                Repository.UpdateType();
+                NameValueCollection Info = new NameValueCollection();
+                //Info.Add("id", (from t in Repository.Types where t.Name == _selectedItem select t.Id.ToString()).Single());
+                Info.Add("name", _changedName);
+
+                byte[] InsertInfo = client.UploadValues("http://kornilova.styleru.net/proga/edit_type", "POST", Info);
+                //client.Headers.Add("Content-Type", "binary/octet-stream");
+                OnPropertyChanged("TypeList");
+                _changedName = "";
+                OnPropertyChanged("ChangedName");
+            }
+            else MessageBox.Show("Упс");
         }
     }
 }
