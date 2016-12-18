@@ -21,8 +21,8 @@
             <Label x:Name="label1" Content="Название компании:" HorizontalAlignment="Left" Margin="20 0" VerticalAlignment="Center"/>
             <Button x:Name="EditAgent" Content="Изменить список компаний" HorizontalAlignment="Left" Margin="447,4,0,0" VerticalAlignment="Top" Width="247" Click="EditAgent_Click"/>
             <Button x:Name="EditTm" Content="Изменить список тор. мар." HorizontalAlignment="Left" Margin="447,48,0,-35" VerticalAlignment="Top" Width="247" Click="EditTm_Click"/>
-            <ComboBox x:Name="comboBox" SelectedItem="{Binding Agent}" HorizontalAlignment="Left" Margin="201,4,0,0" VerticalAlignment="Top" Width="212"/>
-            <ComboBox x:Name="comboBox_Copy" SelectedItem="{Binding Trademark}" HorizontalAlignment="Left" Margin="201,46,0,-35" VerticalAlignment="Top" Width="212"/>
+            <ComboBox x:Name="comboBox" SelectedItem="{Binding Agent}" ItemsSource="{Binding AgentList}" HorizontalAlignment="Left" Margin="201,4,0,0" VerticalAlignment="Top" Width="212"/>
+            <ComboBox x:Name="comboBox_Copy" SelectedItem="{Binding Trademark}" ItemsSource="{Binding TrademarkList}" HorizontalAlignment="Left" Margin="201,46,0,-35" VerticalAlignment="Top" Width="212"/>
         </Grid>
         <Grid Height="39" Margin="0,78,0,0" VerticalAlignment="Top">
             <Label x:Name="label2" Content="Торговая марка:" HorizontalAlignment="Left" Margin="20 0" VerticalAlignment="Center"/>

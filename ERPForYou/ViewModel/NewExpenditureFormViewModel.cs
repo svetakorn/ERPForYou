@@ -12,6 +12,16 @@ namespace ERPForYou.ViewModel
 {
     public class NewExpenditureFormViewModel : INotifyPropertyChanged
     {
+        public List<string> AgentList { get; set; }
+        public List<string> TrademarkList { get; set; }
+        public NewExpenditureFormViewModel()
+        {
+            Repository.UpdateAgent();
+            Repository.UpdateTrademark();
+            AgentList = (from a in Repository.Agents select a.Name).ToList();
+            TrademarkList = (from a in Repository.Trademarks select a.Name).ToList();
+        }
+
         WebClient client = new WebClient();
 
         public event PropertyChangedEventHandler PropertyChanged;
