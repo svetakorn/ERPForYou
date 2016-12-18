@@ -130,6 +130,9 @@
     <Compile Include="View\NewReceiptForm.xaml.cs">
       <DependentUpon>NewReceiptForm.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\NextZakazPage.xaml.cs">
+      <DependentUpon>NextZakazPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ReceiptPage.xaml.cs">
       <DependentUpon>ReceiptPage.xaml</DependentUpon>
     </Compile>
@@ -181,6 +184,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\NewReceiptForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\NextZakazPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

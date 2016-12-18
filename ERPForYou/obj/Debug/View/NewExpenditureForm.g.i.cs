@@ -122,15 +122,7 @@ namespace ERPForYou.View {
         #line hidden
         
         
-        #line 35 "..\..\..\View\NewExpenditureForm.xaml"
-        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.Button newPositionButton;
-        
-        #line default
-        #line hidden
-        
-        
-        #line 37 "..\..\..\View\NewExpenditureForm.xaml"
+        #line 36 "..\..\..\View\NewExpenditureForm.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Label label10;
         
@@ -138,7 +130,7 @@ namespace ERPForYou.View {
         #line hidden
         
         
-        #line 38 "..\..\..\View\NewExpenditureForm.xaml"
+        #line 37 "..\..\..\View\NewExpenditureForm.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox textBox9;
         
@@ -218,12 +210,9 @@ namespace ERPForYou.View {
             this.submitButton = ((System.Windows.Controls.Button)(target));
             return;
             case 11:
-            this.newPositionButton = ((System.Windows.Controls.Button)(target));
-            return;
-            case 12:
             this.label10 = ((System.Windows.Controls.Label)(target));
             return;
-            case 13:
+            case 12:
             this.textBox9 = ((System.Windows.Controls.TextBox)(target));
             return;
             }
