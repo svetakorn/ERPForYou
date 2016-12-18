@@ -147,6 +147,7 @@ namespace ERPForYou.ViewModel
                 Info.Add("quantity", _quantity.ToString());
 
                 byte[] InsertInfo = client.UploadValues("http://kornilova.styleru.net/proga/add_zakaz_material", "POST", Info);
+
                 //client.Headers.Add("Content-Type", "binary/octet-stream");
                 _selectedType = "";
                 _quantity = 0;

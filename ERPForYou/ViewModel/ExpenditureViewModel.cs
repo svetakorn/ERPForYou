@@ -103,7 +103,7 @@ namespace ERPForYou.ViewModel
             }
             else
             {
-                MessageBox.Show("Что-то пошло не так!");
+                MessageBox.Show("Ошибка!\nЧто-то пошло не так.");
             }
         }
     }

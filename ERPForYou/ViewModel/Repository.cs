@@ -26,6 +26,7 @@ namespace ERPForYou.ViewModel
         {
             using (WebClient wc = new WebClient())
             {
+                wc.Encoding = Encoding.UTF8;
                 var json = wc.DownloadString("http://kornilova.styleru.net/proga/get_ue");
                 Ues = JsonConvert.DeserializeObject<List<UE>>(json);
             }
@@ -35,6 +36,7 @@ namespace ERPForYou.ViewModel
         {
             using (WebClient wc = new WebClient())
             {
+                wc.Encoding = Encoding.UTF8;
                 var json = wc.DownloadString("http://kornilova.styleru.net/proga/get_type");
                 Types = JsonConvert.DeserializeObject<List<Model.Type>>(json);
             }
@@ -46,6 +48,7 @@ namespace ERPForYou.ViewModel
         {
             using (WebClient wc = new WebClient())
             {
+                wc.Encoding = Encoding.UTF8;
                 var json = wc.DownloadString("http://kornilova.styleru.net/proga/get_material");
                 Materials = JsonConvert.DeserializeObject<List<Material>>(json);
             }
@@ -55,6 +58,7 @@ namespace ERPForYou.ViewModel
         {
             using (WebClient wc = new WebClient())
             {
+                wc.Encoding = Encoding.UTF8;
                 var json = wc.DownloadString("http://kornilova.styleru.net/proga/get_zakaz_material");
                 Zakaz_materials = JsonConvert.DeserializeObject<List<Zakaz_material>>(json);
             }
@@ -64,6 +68,7 @@ namespace ERPForYou.ViewModel
         {
             using (WebClient wc = new WebClient())
             {
+                wc.Encoding = Encoding.UTF8;
                 var json = wc.DownloadString("http://kornilova.styleru.net/proga/get_agent");
                 Agents = JsonConvert.DeserializeObject<List<Agent>>(json);
             }
@@ -73,6 +78,7 @@ namespace ERPForYou.ViewModel
         {
             using (WebClient wc = new WebClient())
             {
+                wc.Encoding = Encoding.UTF8;
                 var json = wc.DownloadString("http://kornilova.styleru.net/proga/get_zakaz");
                 Zakazs = JsonConvert.DeserializeObject<List<Zakaz>>(json);
             }
@@ -82,6 +88,7 @@ namespace ERPForYou.ViewModel
         {
             using (WebClient wc = new WebClient())
             {
+                wc.Encoding = Encoding.UTF8;
                 var json = wc.DownloadString("http://kornilova.styleru.net/proga/get_trademark");
                 Trademarks = JsonConvert.DeserializeObject<List<Trademark>>(json);
             }
@@ -90,6 +97,7 @@ namespace ERPForYou.ViewModel
         {
             using (WebClient wc = new WebClient())
             {
+                wc.Encoding = Encoding.UTF8;
                 var json = wc.DownloadString("http://kornilova.styleru.net/proga/get_sklad");
                 Sklads = JsonConvert.DeserializeObject<List<Sklad>>(json);
             }
@@ -99,6 +107,7 @@ namespace ERPForYou.ViewModel
         {
             using (WebClient wc = new WebClient())
             {
+                wc.Encoding = Encoding.UTF8;
                 var json = wc.DownloadString("http://kornilova.styleru.net/proga/get_ostatok");
                 Ostatok = JsonConvert.DeserializeObject<List<Ostatok>>(json);
             }

@@ -15,7 +15,8 @@ namespace ERPForYou.ViewModel
     
     public class AddingNewMaterialViewModel : INotifyPropertyChanged
     {
-        WebClient client = new WebClient();
+        WebClient client = new WebClient();      
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         public ObservableCollection<string> UeList { get; set; }

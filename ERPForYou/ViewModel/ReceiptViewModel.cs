@@ -8,6 +8,7 @@ using ERPForYou.ViewModel.ViewModelPattern;
 using System.Linq;
 using System.Net;
 using System.Collections.Specialized;
+using System.Text;
 
 namespace ERPForYou.ViewModel
 {
@@ -59,6 +60,7 @@ namespace ERPForYou.ViewModel
 
         public ReceiptViewModel()
         {
+            client.Encoding = Encoding.UTF8;
             Repository.UpdateSklad();
             Repository.UpdateMaterial();
             Repository.UpdateUe();

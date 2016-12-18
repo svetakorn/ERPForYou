@@ -136,6 +136,9 @@ namespace ERPForYou.ViewModel
 
                 byte[] InsertInfo = client.UploadValues("http://kornilova.styleru.net/proga/add_to_sklad", "POST", Info);
                 //client.Headers.Add("Content-Type", "binary/octet-stream");
+
+                byte[] InsertInfo_ostatok = client.UploadValues("http://kornilova.styleru.net/proga/add_to_ostatok", "POST", Info);
+
                 _selectedType = "";
                 _quantity = 0;
                 _selectedMaterial = "";

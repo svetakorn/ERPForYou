@@ -155,7 +155,7 @@ namespace ERPForYou.ViewModel
                 _changedName = "";
                 OnPropertyChanged("ChangedName");
             }
-            else MessageBox.Show("Упс");
+            else MessageBox.Show("Ошибка!\nЧто-то пошло не так.");
         }
     }
 }
