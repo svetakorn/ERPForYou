@@ -81,6 +81,7 @@
     </ApplicationDefinition>
     <Compile Include="Model\Agent.cs" />
     <Compile Include="Model\Material.cs" />
+    <Compile Include="Model\Ostatok.cs" />
     <Compile Include="Model\Sklad.cs" />
     <Compile Include="Model\Trademark.cs" />
     <Compile Include="Model\Type.cs" />
