@@ -23,6 +23,7 @@ namespace ERPForYou.View
         public ReceiptPage()
         {
             InitializeComponent();
+            receiptTable.IsReadOnly = true;
         }
 
         private void newReceiptButton_Click(object sender, RoutedEventArgs e)

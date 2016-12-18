@@ -23,6 +23,7 @@ namespace ERPForYou.View
         public ExpenditurePage()
         {
             InitializeComponent();
+            expTable.IsReadOnly = true;
         }
 
         private void newExpButton_Click(object sender, RoutedEventArgs e)

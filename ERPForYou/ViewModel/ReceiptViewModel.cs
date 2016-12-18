@@ -6,6 +6,8 @@ using ERPForYou.Model;
 using System.Windows;
 using ERPForYou.ViewModel.ViewModelPattern;
 using System.Linq;
+using System.Net;
+using System.Collections.Specialized;
 
 namespace ERPForYou.ViewModel
 {
@@ -21,9 +23,39 @@ namespace ERPForYou.ViewModel
     /// See http://www.galasoft.ch/mvvm
     /// </para>
     /// </summary>
-    public class ReceiptViewModel
+    public class ReceiptViewModel : INotifyPropertyChanged
     {
-        public List<SkladViewModelPattern> SkladList { get; set; }
+        WebClient client = new WebClient();
+
+        protected virtual void OnPropertyChanged(string propertyName)
+        {
+            PropertyChangedEventHandler handler = PropertyChanged;
+            if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private List<SkladViewModelPattern> _skladList;
+        public List<SkladViewModelPattern> SkladList
+        {
+            get { return SkladRequest(); }
+            set
+            {
+                _skladList = value;
+                OnPropertyChanged("SkladList");
+            }
+        }
+
+        private SkladViewModelPattern _selectedItem;
+        public SkladViewModelPattern SelectedItem
+        {
+            get { return _selectedItem; }
+            set
+            {
+                _selectedItem = value;
+                OnPropertyChanged("SelectedItem");
+            }
+        }
 
         public ReceiptViewModel()
         {
@@ -35,6 +67,7 @@ namespace ERPForYou.ViewModel
 
         private List<SkladViewModelPattern> SkladRequest()
         {
+            Repository.UpdateSklad();
             return (from s in Repository.Sklads
                     orderby s.DateTime descending
                     select new SkladViewModelPattern
@@ -44,6 +77,44 @@ namespace ERPForYou.ViewModel
                         Quantity = s.Quantity,
                         DateTime = s.DateTime
                     }).ToList();
+        }
+
+        #region Command
+
+        private DelegateCommand _deleteCommand;
+        public DelegateCommand DeleteCommand
+        {
+            get { return _deleteCommand ?? (_deleteCommand = new DelegateCommand(Execute, CanExecute)); }
+        }
+
+        private bool CanExecute(object obj)
+        {
+            return true;
+        }
+
+        private void Execute(object obj)
+        {
+            Delete();
+        }
+        #endregion
+
+        private void Delete()
+        {
+            if (_selectedItem != null)
+            {
+                Repository.UpdateSklad();
+                NameValueCollection Info = new NameValueCollection();
+                Info.Add("id", (from s in Repository.Sklads where _selectedItem.DateTime == s.DateTime select s.Id.ToString()).Single());
+
+                byte[] InsertInfo = client.UploadValues("http://kornilova.styleru.net/proga/remove_sklad", "POST", Info);
+                //client.Headers.Add("Content-Type", "binary/octet-stream");
+
+                OnPropertyChanged("SkladList");
+            }
+            else
+            {
+                MessageBox.Show("Что-то пошло не так!");
+            }
         }
     }
 }
