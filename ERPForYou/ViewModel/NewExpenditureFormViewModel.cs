@@ -97,12 +97,17 @@ namespace ERPForYou.ViewModel
 
         private void AddZakaz()
         {
-            if (!string.IsNullOrWhiteSpace(_agent) && (_idZakaz > 0) && !string.IsNullOrEmpty(_trademark) && (_quantity > 0))
+            Repository.UpdateZakaz();
+            Repository.UpdateAgent();
+            Repository.UpdateTrademark();
+            bool flag = true;
+            var existingNumbers = (from m in Repository.Zakazs select m.Num_zakaz).ToList();
+            foreach (var item in existingNumbers)
             {
-                Repository.UpdateZakaz();
-                Repository.UpdateAgent();
-                Repository.UpdateTrademark();
-
+                if (item == _idZakaz) flag = false;
+            }
+            if (flag && !string.IsNullOrWhiteSpace(_trademark) && !string.IsNullOrEmpty(_agent) && (_idZakaz > 0) && (_quantity > 0))
+            {
                 NameValueCollection Info = new NameValueCollection();
                 Info.Add("id_trademark", (from t in Repository.Trademarks where t.Name == _trademark select t.Id.ToString()).Single());
                 Info.Add("id_agent", (from t in Repository.Agents where t.Name == _agent select t.Id.ToString()).Single());
@@ -123,7 +128,16 @@ namespace ERPForYou.ViewModel
             }
             else
             {
-                MessageBox.Show("Данные введены не полностью или неверно!");
+                MessageBox.Show("Данные введены неверно или заказ с таким номером уже существует или д!");
+                _idZakaz = 0;
+                _quantity = 0;
+                _trademark = "";
+                _agent = "";
+
+                OnPropertyChanged("IdZakaz");
+                OnPropertyChanged("Trademark");
+                OnPropertyChanged("Agent");
+                OnPropertyChanged("Quantity");
             }
         }
     }

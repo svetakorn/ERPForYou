@@ -29,7 +29,7 @@
         </Grid>
         <Grid Height="39" Margin="0,117,0,0" VerticalAlignment="Top">
             <Label x:Name="label3" Content="Номер заказа:" HorizontalAlignment="Left" Margin="20 0" VerticalAlignment="Center"/>
-            <TextBox x:Name="textBox2" Text="{Binding IdZakaz}" HorizontalAlignment="Left" Height="23" Margin="195 0" TextWrapping="Wrap" VerticalAlignment="Center" Width="221"/>
+            <TextBox x:Name="textBox2" Text="{Binding IdZakaz, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" HorizontalAlignment="Left" Height="23" Margin="195 0" TextWrapping="Wrap" VerticalAlignment="Center" Width="221"/>
         </Grid>
         <Button x:Name="submitButton" Command="{Binding AddCommand}" Content="Продолжить оформление заказа" HorizontalAlignment="Left"  VerticalAlignment="Bottom" Margin="181,0,0,26" Width="365" Height="42" Click="submitButton_Click"/>
         <Grid Height="39" Margin="0,156,0,0" VerticalAlignment="Top">

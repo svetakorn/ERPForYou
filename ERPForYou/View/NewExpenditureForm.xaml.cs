@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ERPForYou.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -37,7 +38,17 @@ namespace ERPForYou.View
 
         private void submitButton_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new ZakazNextPage(textBox2.Text, Convert.ToInt32(textBox9.Text)));
+            bool flag = true;
+            List<string> existingNumbers = (from m in Repository.Zakazs select m.Num_zakaz.ToString()).ToList();
+            foreach (var item in existingNumbers)
+            {
+                if (item == textBox2.Text) flag = false;
+            }
+                if (Convert.ToInt32(textBox2.Text) != 0 && flag)
+            {
+                 NavigationService.Navigate(new ZakazNextPage(textBox2.Text, Convert.ToInt32(textBox9.Text)));
+            }
+           
         }
     }
 }

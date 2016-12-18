@@ -27,7 +27,8 @@ namespace ERPForYou.View
             {
             InitializeComponent();
             textBoxNum.IsReadOnly = true;
-            textBoxNum.Text = num_zakaz;
+                textBoxUe.IsReadOnly = true;
+                textBoxNum.Text = num_zakaz;
                 flag = quantity;
             }   
         }

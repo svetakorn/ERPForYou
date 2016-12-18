@@ -94,6 +94,7 @@ namespace ERPForYou.ViewModel
 
         private void AddNewType()
         {
+            Repository.UpdateAgent();
             bool flag = true;
             var existingNames = (from m in Repository.Agents select m.Name).ToList();
             foreach (var item in existingNames)
@@ -108,14 +109,14 @@ namespace ERPForYou.ViewModel
                 byte[] InsertInfo = client.UploadValues("http://kornilova.styleru.net/proga/add_agent", "POST", Info);
                 //client.Headers.Add("Content-Type", "binary/octet-stream");
 
-                _newText = "";
+                _newText = null;
                 OnPropertyChanged("NewText");
                 OnPropertyChanged("TypeList");
             }
             else
             {
                 MessageBox.Show("Такая компания уже существует в базе данных!");
-                _newText = "";
+                _newText = null;
                 OnPropertyChanged("NewText");
             }
         }
@@ -139,7 +140,7 @@ namespace ERPForYou.ViewModel
 
         private void EditAgent()
         {
-            if (_selectedItem != null && _changedName != null)
+            if (_selectedItem != null && !string.IsNullOrEmpty(_changedName) && !string.IsNullOrWhiteSpace(_changedName))
             {
 
                 Repository.UpdateAgent();

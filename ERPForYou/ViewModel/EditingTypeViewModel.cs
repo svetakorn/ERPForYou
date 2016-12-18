@@ -140,7 +140,7 @@ namespace ERPForYou.ViewModel
 
         private void EditType()
         {
-            if (_selectedItem != null && _changedName != null)
+            if (_selectedItem != null && !string.IsNullOrEmpty(_changedName) && !string.IsNullOrWhiteSpace(_changedName))
             {
 
                 Repository.UpdateType();

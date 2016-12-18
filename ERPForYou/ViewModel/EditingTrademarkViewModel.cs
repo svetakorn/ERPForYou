@@ -94,6 +94,7 @@ namespace ERPForYou.ViewModel
 
         private void AddNewType()
         {
+            Repository.UpdateTrademark();
             bool flag = true;
             var existingNames = (from m in Repository.Trademarks select m.Name).ToList();
             foreach (var item in existingNames)
@@ -139,7 +140,7 @@ namespace ERPForYou.ViewModel
 
         private void EditTrademark()
         {
-            if (_selectedItem != null && _changedName != null)
+            if (_selectedItem != null && !string.IsNullOrEmpty(_changedName) && !string.IsNullOrWhiteSpace(_changedName))
             {
 
                 Repository.UpdateTrademark();

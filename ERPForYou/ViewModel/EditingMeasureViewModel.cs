@@ -95,6 +95,7 @@ namespace ERPForYou.ViewModel
 
         private void AddNewMeasure()
         {
+            Repository.UpdateUe();
             bool flag = true;
             var existingNames = (from m in Repository.Ues select m.Name).ToList();
             foreach (var item in existingNames)
@@ -140,7 +141,7 @@ namespace ERPForYou.ViewModel
 
         private void EditType()
         {
-            if (_selectedItem != null && _changedName != null)
+            if (_selectedItem != null && !string.IsNullOrEmpty(_changedName) && !string.IsNullOrWhiteSpace(_changedName))
             {
 
                 Repository.UpdateUe();
