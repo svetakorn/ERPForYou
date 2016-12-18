@@ -88,7 +88,7 @@ namespace ERPForYou.ViewModel
 
         private void editExecute(object obj)
         {
-            //EditType();
+            EditAgent();
         }
         #endregion
 
@@ -137,17 +137,17 @@ namespace ERPForYou.ViewModel
         }
 
 
-        private void EditType()
+        private void EditAgent()
         {
             if (_selectedItem != null && _changedName != null)
             {
 
-                Repository.UpdateType();
+                Repository.UpdateAgent();
                 NameValueCollection Info = new NameValueCollection();
-                //Info.Add("id", (from t in Repository.Types where t.Name == _selectedItem select t.Id.ToString()).Single());
+                Info.Add("id", (from t in Repository.Agents where t.Name == _selectedItem select t.Id.ToString()).Single());
                 Info.Add("name", _changedName);
 
-                byte[] InsertInfo = client.UploadValues("http://kornilova.styleru.net/proga/edit_type", "POST", Info);
+                byte[] InsertInfo = client.UploadValues("http://kornilova.styleru.net/proga/edit_agent", "POST", Info);
                 //client.Headers.Add("Content-Type", "binary/octet-stream");
                 OnPropertyChanged("TypeList");
                 _changedName = "";

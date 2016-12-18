@@ -12,6 +12,8 @@ namespace ERPForYou.ViewModel
 {
     public class ZakazNextPageViewModel : INotifyPropertyChanged
     {
+
+
         WebClient client = new WebClient();
 
         public event PropertyChangedEventHandler PropertyChanged;
