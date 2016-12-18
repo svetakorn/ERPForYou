@@ -99,9 +99,11 @@
     <Compile Include="ViewModel\NewExpenditureFormViewModel.cs" />
     <Compile Include="ViewModel\NewReceiptFormViewModel.cs" />
     <Compile Include="ViewModel\ReceiptViewModel.cs" />
+    <Compile Include="ViewModel\RemainderPageViewModel.cs" />
     <Compile Include="ViewModel\Repository.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Compile Include="ViewModel\ViewModelPattern\MaterialViewModelPattern.cs" />
+    <Compile Include="ViewModel\ViewModelPattern\OstatokViewModelPattern.cs" />
     <Compile Include="ViewModel\ViewModelPattern\SkladViewModelPattern.cs" />
     <Compile Include="ViewModel\ViewModelPattern\ZakazViewModelPattern.cs" />
     <Compile Include="ViewModel\ZakazNextPageViewModel.cs" />

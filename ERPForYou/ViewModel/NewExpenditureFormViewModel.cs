@@ -113,7 +113,7 @@ namespace ERPForYou.ViewModel
                 Info.Add("id_agent", (from t in Repository.Agents where t.Name == _agent select t.Id.ToString()).Single());
                 Info.Add("quantity", _quantity.ToString());
                 Info.Add("num_zakaz", _idZakaz.ToString());
-                Info.Add("price", _quantity.ToString());
+                Info.Add("price", (_quantity + 1).ToString());
 
                 byte[] InsertInfo = client.UploadValues("http://kornilova.styleru.net/proga/add_zakaz", "POST", Info);
                 //client.Headers.Add("Content-Type", "binary/octet-stream");

@@ -37,7 +37,7 @@ namespace ERPForYou.View
         {
             if (flag == 1)
             {
-                NavigationService.Navigate(new ExpenditurePage());
+                NavigationService.Navigate(new NewExpenditureForm());
             }
             else
             NavigationService.Navigate(new ZakazNextPage(textBoxNum.Text, flag - 1));
