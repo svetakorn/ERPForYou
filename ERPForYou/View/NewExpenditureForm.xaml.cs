@@ -34,5 +34,10 @@ namespace ERPForYou.View
         {
             NavigationService.Navigate(new Uri("View/EditingTrademark.xaml", UriKind.Relative));
         }
+
+        private void submitButton_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new ZakazNextPage(textBox2.Text));
+        }
     }
 }

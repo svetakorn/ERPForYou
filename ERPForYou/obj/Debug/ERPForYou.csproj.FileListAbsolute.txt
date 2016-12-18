@@ -61,7 +61,6 @@ C:\Users\mvideo\Desktop\ERP\102\ERPForYou\bin\Debug\GalaSoft.MvvmLight.Platform.
 C:\Users\mvideo\Desktop\ERP\102\ERPForYou\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
 C:\Users\mvideo\Desktop\ERP\102\ERPForYou\bin\Debug\Microsoft.Practices.ServiceLocation.xml
 C:\Users\mvideo\Desktop\ERP\102\ERPForYou\bin\Debug\Newtonsoft.Json.xml
-C:\Users\mvideo\Desktop\ERP\102\ERPForYou\obj\Debug\ERPForYou.csprojResolveAssemblyReference.cache
 C:\Users\mvideo\Desktop\ERP\102\ERPForYou\obj\Debug\View\AddingNewMaterial.g.cs
 C:\Users\mvideo\Desktop\ERP\102\ERPForYou\obj\Debug\View\EditingType.g.cs
 C:\Users\mvideo\Desktop\ERP\102\ERPForYou\obj\Debug\View\ExpenditurePage.g.cs
@@ -94,3 +93,6 @@ C:\Users\mvideo\Desktop\ERP\102\ERPForYou\obj\Debug\View\EditingAgent.g.cs
 C:\Users\mvideo\Desktop\ERP\102\ERPForYou\obj\Debug\View\EditingTrademark.g.cs
 C:\Users\mvideo\Desktop\ERP\102\ERPForYou\obj\Debug\View\EditingAgent.baml
 C:\Users\mvideo\Desktop\ERP\102\ERPForYou\obj\Debug\View\EditingTrademark.baml
+C:\Users\mvideo\Desktop\ERP\102\ERPForYou\obj\Debug\View\ZakazNextPage.g.cs
+C:\Users\mvideo\Desktop\ERP\102\ERPForYou\obj\Debug\View\ZakazNextPage.baml
+C:\Users\mvideo\Desktop\ERP\102\ERPForYou\obj\Debug\ERPForYou.csprojResolveAssemblyReference.cache

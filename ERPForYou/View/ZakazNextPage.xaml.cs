@@ -16,13 +16,15 @@ using System.Windows.Shapes;
 namespace ERPForYou.View
 {
     /// <summary>
-    /// Логика взаимодействия для NextZakazPage.xaml
+    /// Логика взаимодействия для ZakazNextPage.xaml
     /// </summary>
-    public partial class NextZakazPage : Page
+    public partial class ZakazNextPage : Page
     {
-        public NextZakazPage()
+        public ZakazNextPage(string num_zakaz)
         {
             InitializeComponent();
+            textBoxNum.IsReadOnly = true;
+            textBoxNum.Text = num_zakaz;
         }
     }
 }

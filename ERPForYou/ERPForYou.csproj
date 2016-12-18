@@ -103,6 +103,7 @@
     <Compile Include="ViewModel\ViewModelPattern\MaterialViewModelPattern.cs" />
     <Compile Include="ViewModel\ViewModelPattern\SkladViewModelPattern.cs" />
     <Compile Include="ViewModel\ViewModelPattern\ZakazViewModelPattern.cs" />
+    <Compile Include="ViewModel\ZakazNextPageViewModel.cs" />
     <Compile Include="View\AddingNewMaterial.xaml.cs">
       <DependentUpon>AddingNewMaterial.xaml</DependentUpon>
     </Compile>
@@ -130,14 +131,14 @@
     <Compile Include="View\NewReceiptForm.xaml.cs">
       <DependentUpon>NewReceiptForm.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\NextZakazPage.xaml.cs">
-      <DependentUpon>NextZakazPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\ReceiptPage.xaml.cs">
       <DependentUpon>ReceiptPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\RemainderPage.xaml.cs">
       <DependentUpon>RemainderPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ZakazNextPage.xaml.cs">
+      <DependentUpon>ZakazNextPage.xaml</DependentUpon>
     </Compile>
     <Page Include="View\AddingNewMaterial.xaml">
       <SubType>Designer</SubType>
@@ -187,15 +188,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\NextZakazPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="View\ReceiptPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\RemainderPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ZakazNextPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

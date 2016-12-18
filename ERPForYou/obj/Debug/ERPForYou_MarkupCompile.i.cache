@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\mvideo\Desktop\ERP\102\ERPForYou\App.xaml
-13-597237196
+13-1237493491
 
-45-174298136
+4610340826
 70145323662
-View\AddingNewMaterial.xaml;View\EditingMaterial.xaml;View\EditingMeasure.xaml;View\EditingAgent.xaml;View\EditingTrademark.xaml;View\EditingType.xaml;View\ExpenditurePage.xaml;View\MainWindow.xaml;View\NewExpenditureForm.xaml;View\NewReceiptForm.xaml;View\NextZakazPage.xaml;View\ReceiptPage.xaml;View\RemainderPage.xaml;
+View\AddingNewMaterial.xaml;View\EditingMaterial.xaml;View\EditingMeasure.xaml;View\EditingAgent.xaml;View\EditingTrademark.xaml;View\EditingType.xaml;View\ExpenditurePage.xaml;View\MainWindow.xaml;View\NewExpenditureForm.xaml;View\NewReceiptForm.xaml;View\ReceiptPage.xaml;View\RemainderPage.xaml;View\ZakazNextPage.xaml;
 
-False
+True
 
