@@ -37,7 +37,7 @@ namespace ERPForYou.View
 
         private void submitButton_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new ZakazNextPage(textBox2.Text));
+            NavigationService.Navigate(new ZakazNextPage(textBox2.Text, Convert.ToInt32(textBox9.Text)));
         }
     }
 }

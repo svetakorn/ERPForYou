@@ -20,11 +20,26 @@ namespace ERPForYou.View
     /// </summary>
     public partial class ZakazNextPage : Page
     {
-        public ZakazNextPage(string num_zakaz)
+        public int flag;
+        public ZakazNextPage(string num_zakaz, int quantity)
         {
+            if (quantity > 0)
+            {
             InitializeComponent();
             textBoxNum.IsReadOnly = true;
             textBoxNum.Text = num_zakaz;
+                flag = quantity;
+            }   
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            if (flag == 1)
+            {
+                NavigationService.Navigate(new ExpenditurePage());
+            }
+            else
+            NavigationService.Navigate(new ZakazNextPage(textBoxNum.Text, flag - 1));
         }
     }
 }

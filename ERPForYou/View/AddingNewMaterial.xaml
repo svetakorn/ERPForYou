@@ -8,7 +8,6 @@
       mc:Ignorable="d" 
       d:DesignHeight="472" d:DesignWidth="718"
       Title="AddingNewMaterial" Background="White" FontSize="16">
-
     <Page.DataContext>
         <ViewModel:AddingNewMaterialViewModel/>
     </Page.DataContext>

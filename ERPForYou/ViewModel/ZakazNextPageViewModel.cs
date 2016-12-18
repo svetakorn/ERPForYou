@@ -90,6 +90,7 @@ namespace ERPForYou.ViewModel
 
         private void ShowUe()
         {
+            Repository.UpdateUe();
             _ue = (from u in Repository.Ues where (from m in Repository.Materials where m.Name == SelectedMaterial select m.Id_ue).Single() == u.Id select u.Name).Single();
             OnPropertyChanged("Ue");
         }
