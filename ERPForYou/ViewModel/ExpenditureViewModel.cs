@@ -13,19 +13,21 @@ namespace ERPForYou.ViewModel
 
         public ExpenditureViewModel()
         {
-            Repository.UpdateSklad();
-            Repository.UpdateMaterial();
-            Repository.UpdateUe();
+            Repository.UpdateZakaz();
+            Repository.UpdateTrademark();
+            Repository.UpdateAgent();
             ZakazList = ZakazRequest();
         }
 
         private List<ZakazViewModelPattern> ZakazRequest()
         {
-            return (from s in Repository.Sklads
+            return (from s in Repository.Zakazs
                     select new ZakazViewModelPattern
                     {
-                        MaterialName = (from c in Repository.Materials where s.Id_material == c.Id select c.Name).Single(),
-                        UeName = (from c in Repository.Ues where ((from d in Repository.Materials where s.Id_material == d.Id select d.Id_ue).Single()) == c.Id select c.Name).Single(),
+                        DateTime = s.Datetime,
+                        Agent = (from c in Repository.Agents where s.Id_agent == c.Id select c.Name).Single(),
+                        Trademark = (from c in Repository.Trademarks where s.Id_trademark == c.Id select c.Name).Single(),
+                        Price = s.Price,
                         Quantity = s.Quantity
                     }).ToList();
         }
