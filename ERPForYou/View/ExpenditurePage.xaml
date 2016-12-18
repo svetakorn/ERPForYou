@@ -8,7 +8,6 @@
       mc:Ignorable="d" 
       d:DesignHeight="472" d:DesignWidth="718"
       Title="ExpenditurePage" Background="White" ShowsNavigationUI="False">
-
     <Page.DataContext>
         <ViewModel:ExpenditureViewModel/>
     </Page.DataContext>
