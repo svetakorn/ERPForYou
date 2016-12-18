@@ -86,6 +86,7 @@
     <Compile Include="Model\Type.cs" />
     <Compile Include="Model\UE.cs" />
     <Compile Include="Model\Zakaz.cs" />
+    <Compile Include="Model\Zakaz_material.cs" />
     <Compile Include="ViewModel\AddingNewMaterialViewModel.cs" />
     <Compile Include="ViewModel\DelegateCommand.cs" />
     <Compile Include="ViewModel\EditingMaterialViewModel.cs" />
