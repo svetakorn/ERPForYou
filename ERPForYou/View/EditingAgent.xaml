@@ -16,14 +16,14 @@
     <Grid>
         <Grid Background="#E7F3FE" Margin="359,0,0,0">
             <Grid HorizontalAlignment="Left" Height="139" VerticalAlignment="Top" Width="359">
-                <Label x:Name="label" Content="Добавить новую компанию" HorizontalAlignment="Left" Margin="10,17,0,0" VerticalAlignment="Top"/>
-                <TextBox x:Name="NewType" Text="{Binding NewText, UpdateSourceTrigger=PropertyChanged}"  HorizontalAlignment="Left" Height="22" Margin="10,54,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="339"/>
-                <Button x:Name="AddButton" Content="Добавить" Command="{Binding MyCommand}" HorizontalAlignment="Left" Margin="10,94,0,0" VerticalAlignment="Top" Width="162" Height="35"/>
+                <Label x:Name="label" Content="Добавить новую компанию" HorizontalAlignment="Left" Margin="10,11,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="NewType" Text="{Binding NewText, UpdateSourceTrigger=PropertyChanged}" Height="37" Margin="10,56,10,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                <Button x:Name="AddButton" Content="Добавить" Command="{Binding MyCommand}" HorizontalAlignment="Left" Margin="10,110,0,-8" VerticalAlignment="Top" Width="162" Height="37"/>
             </Grid>
             <Grid HorizontalAlignment="Left" Height="180" VerticalAlignment="Top" Width="359" Margin="0,180,0,0">
                 <Label x:Name="label1" Content="Изменить существующую компанию" HorizontalAlignment="Left" Margin="10,17,0,0" VerticalAlignment="Top"/>
-                <TextBox x:Name="ChangedType" Text="{Binding ChangedName, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="22" Margin="10,91,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="339"/>
-                <Button x:Name="EditButton" Command="{Binding EditCommand}" Content="Изменить" HorizontalAlignment="Left" Margin="10,131,0,0" VerticalAlignment="Top" Width="162" Height="35"/>
+                <TextBox x:Name="ChangedType" Text="{Binding ChangedName, UpdateSourceTrigger=PropertyChanged}" Height="37" Margin="10,91,10,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                <Button x:Name="EditButton" Command="{Binding EditCommand}" Content="Изменить" HorizontalAlignment="Left" Margin="10,147,0,-4" VerticalAlignment="Top" Width="162" Height="37"/>
                 <Label x:Name="label2" Content="Выберите компанию из списка и введите ее новое название" HorizontalAlignment="Left" Margin="10,53,0,0" VerticalAlignment="Top" FontSize="11"/>
             </Grid>
             <!--<Grid HorizontalAlignment="Left" Height="148" Margin="0,324,0,0" VerticalAlignment="Top" Width="359">
@@ -35,7 +35,7 @@
 
         </Grid>
         <ListBox x:Name="listBoxType" SelectedItem="{Binding SelectedItem}" ItemsSource="{Binding TypeList, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="25,57,0,25" Width="304"/>
-        <Button x:Name="button" Content="Назад" HorizontalAlignment="Left" Margin="25,10,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
+        <Button x:Name="button" Content="Назад" HorizontalAlignment="Left" Margin="25,14,0,0" VerticalAlignment="Top" Width="75" Click="button_Click" Height="30"/>
 
 
     </Grid>

@@ -27,7 +27,7 @@ namespace ERPForYou.View
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Uri("View/AddingNewMaterial.xaml", UriKind.Relative));
+            NavigationService.Navigate(new AddingNewMaterial(null));
         }
     }
 }

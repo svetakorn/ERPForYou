@@ -12,7 +12,7 @@ namespace ERPForYou.ViewModel.ViewModelPattern
         public string Agent { get; set; }
         public string Trademark { get; set; }
         public int Quantity { get; set; }
-        public int Number { get; set; }
+        public int ZakazNumber { get; set; }
         public float Price { get; set; }
     }
 }

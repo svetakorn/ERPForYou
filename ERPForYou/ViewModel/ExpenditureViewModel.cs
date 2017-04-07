@@ -65,7 +65,7 @@ namespace ERPForYou.ViewModel
                         Trademark = (from c in Repository.Trademarks where s.Id_trademark == c.Id select c.Name).Single(),
                         Price = s.Price,
                         Quantity = s.Quantity,
-                        Number = s.Num_zakaz
+                        ZakazNumber = s.Num_zakaz
                     }).ToList();
         }
 
@@ -94,7 +94,7 @@ namespace ERPForYou.ViewModel
             {
                 Repository.UpdateZakaz();
                 NameValueCollection Info = new NameValueCollection();
-                Info.Add("id", (from s in Repository.Zakazs where SelectedItem.Number == s.Num_zakaz select s.Id.ToString()).Single());
+                Info.Add("id", (from s in Repository.Zakazs where SelectedItem.ZakazNumber == s.Num_zakaz select s.Id.ToString()).Single());
                
                 byte[] InsertInfo = client.UploadValues("http://kornilova.styleru.net/proga/remove_zakaz", "POST", Info);
                 //client.Headers.Add("Content-Type", "binary/octet-stream");

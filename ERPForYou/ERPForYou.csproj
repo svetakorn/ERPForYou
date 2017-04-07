@@ -143,6 +143,10 @@
     <Compile Include="View\ZakazNextPage.xaml.cs">
       <DependentUpon>ZakazNextPage.xaml</DependentUpon>
     </Compile>
+    <Page Include="Themes\Dictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\AddingNewMaterial.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

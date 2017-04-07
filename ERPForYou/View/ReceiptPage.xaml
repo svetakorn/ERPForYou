@@ -23,6 +23,6 @@
         <DataGrid x:Name="receiptTable" Margin="10,5" Grid.Row="1" SelectedItem="{Binding SelectedItem, UpdateSourceTrigger=PropertyChanged}" ItemsSource="{Binding SkladList}">
         </DataGrid>
         <Button x:Name="newReceiptButton" Content="Новое поступление" Margin="10,0,0,11" Grid.Row="2" FontSize="16" Height="45" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="284" Click="newReceiptButton_Click"/>
-        <Button x:Name="newReceiptButton2" Command="{Binding DeleteCommand}" Content="Удалить выделенный приход" Margin="338,0,0,10" Grid.Row="2" FontSize="16" Height="45" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="370"/>
+        <Button x:Name="newReceiptButton2" Command="{Binding DeleteCommand}" Content="Удалить выделенный приход" Margin="338,0,10,10" Grid.Row="2" FontSize="16" Height="45" VerticalAlignment="Bottom"/>
     </Grid>
 </Page>

@@ -132,12 +132,12 @@ namespace ERPForYou.ViewModel
                 MessageBox.Show("Данные введены неверно или заказ с таким номером уже существует или д!");
                 _idZakaz = 0;
                 _quantity = 0;
-                _trademark = "";
-                _agent = "";
+                //_trademark = "";
+                //_agent = "";
 
                 OnPropertyChanged("IdZakaz");
-                OnPropertyChanged("Trademark");
-                OnPropertyChanged("Agent");
+                //OnPropertyChanged("Trademark");
+                //OnPropertyChanged("Agent");
                 OnPropertyChanged("Quantity");
             }
         }

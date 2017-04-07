@@ -17,25 +17,25 @@
         <Grid Height="39" VerticalAlignment="Top">
             <Label x:Name="label" Content="Форма для нового заказа" HorizontalAlignment="Left" Margin="20 0" VerticalAlignment="Center"/>
         </Grid>
-        <Grid Height="39" Margin="0,39,0,0" VerticalAlignment="Top">
+        <Grid Height="39" Margin="0,51,0,0" VerticalAlignment="Top">
             <Label x:Name="label1" Content="Название компании:" HorizontalAlignment="Left" Margin="20 0" VerticalAlignment="Center"/>
-            <Button x:Name="EditAgent" Content="Изменить список компаний" HorizontalAlignment="Left" Margin="447,4,0,0" VerticalAlignment="Top" Width="247" Click="EditAgent_Click"/>
-            <Button x:Name="EditTm" Content="Изменить список тор. мар." HorizontalAlignment="Left" Margin="447,48,0,-35" VerticalAlignment="Top" Width="247" Click="EditTm_Click"/>
+            <Button x:Name="EditAgent" Content="Изменить список компаний" HorizontalAlignment="Left" Margin="447,4,0,0" VerticalAlignment="Top" Width="247" Click="EditAgent_Click" Height="30"/>
+            <Button x:Name="EditTm" Content="Изменить список тор. мар." HorizontalAlignment="Left" Margin="447,49,0,-40" VerticalAlignment="Top" Width="247" Click="EditTm_Click" Height="30"/>
             <ComboBox x:Name="comboBox" SelectedItem="{Binding Agent}" ItemsSource="{Binding AgentList}" HorizontalAlignment="Left" Margin="201,4,0,0" VerticalAlignment="Top" Width="212"/>
-            <ComboBox x:Name="comboBox_Copy" SelectedItem="{Binding Trademark}" ItemsSource="{Binding TrademarkList}" HorizontalAlignment="Left" Margin="201,46,0,-35" VerticalAlignment="Top" Width="212"/>
+            <ComboBox x:Name="comboBox_Copy" SelectedItem="{Binding Trademark}" ItemsSource="{Binding TrademarkList}" HorizontalAlignment="Left" Margin="201,49,0,-40" VerticalAlignment="Top" Width="212"/>
         </Grid>
-        <Grid Height="39" Margin="0,78,0,0" VerticalAlignment="Top">
+        <Grid Height="44" Margin="0,91,0,0" VerticalAlignment="Top">
             <Label x:Name="label2" Content="Торговая марка:" HorizontalAlignment="Left" Margin="20 0" VerticalAlignment="Center"/>
         </Grid>
-        <Grid Height="39" Margin="0,117,0,0" VerticalAlignment="Top">
+        <Grid Height="39" Margin="0,139,0,0" VerticalAlignment="Top">
             <Label x:Name="label3" Content="Номер заказа:" HorizontalAlignment="Left" Margin="20 0" VerticalAlignment="Center"/>
-            <TextBox x:Name="textBox2" Text="{Binding IdZakaz, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" HorizontalAlignment="Left" Height="23" Margin="195 0" TextWrapping="Wrap" VerticalAlignment="Center" Width="221"/>
+            <TextBox x:Name="textBox2" Text="{Binding IdZakaz, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" HorizontalAlignment="Left" Height="27" Margin="202,6,0,6" TextWrapping="Wrap" VerticalAlignment="Center" Width="210"/>
         </Grid>
-        <Button x:Name="submitButton" Command="{Binding AddCommand}" Content="Продолжить оформление заказа" HorizontalAlignment="Left"  VerticalAlignment="Bottom" Margin="181,0,0,26" Width="365" Height="42" Click="submitButton_Click"/>
-        <Grid Height="39" Margin="0,156,0,0" VerticalAlignment="Top">
+        <Button x:Name="submitButton" Command="{Binding AddCommand}" Content="Продолжить оформление заказа"  VerticalAlignment="Bottom" Margin="181,0,172,26" Height="42" Click="submitButton_Click"/>
+        <Grid Height="39" Margin="0,182,0,0" VerticalAlignment="Top">
             <Label x:Name="label10" Content="Количество позиций:" HorizontalAlignment="Left" Margin="20 0" VerticalAlignment="Center"/>
-            <TextBox x:Name="textBox9" Text="{Binding Quantity}" HorizontalAlignment="Left" Height="23" Margin="195 0" TextWrapping="Wrap" VerticalAlignment="Center" Width="221"/>
+            <TextBox x:Name="textBox9" Text="{Binding Quantity}" HorizontalAlignment="Left" Height="27" Margin="203,6,0,6" TextWrapping="Wrap" VerticalAlignment="Center" Width="208"/>
         </Grid>
-        <Button x:Name="button" Content="Отмена" HorizontalAlignment="Left" Margin="599,404,0,0" VerticalAlignment="Top" Width="93" Click="button_Click" Height="42"/>
+        <Button x:Name="button" Content="Отмена" Margin="599,404,0,26" Click="button_Click" Height="Auto" HorizontalAlignment="Left" Width="92"/>
     </Grid>
 </Page>

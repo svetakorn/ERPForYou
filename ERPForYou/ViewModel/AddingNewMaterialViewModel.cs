@@ -127,10 +127,10 @@ namespace ERPForYou.ViewModel
             {
                 _name = "";
                 _price = 0;
-                _selectedUe = "";
+                //_selectedUe = "";
                 OnPropertyChanged("Name");
                 OnPropertyChanged("Price");
-                OnPropertyChanged("SelectedUe");
+                //OnPropertyChanged("SelectedUe");
                 MessageBox.Show("Такая единица измерения уже существует в базе данных или данные введены не полностью!");
                 
             }

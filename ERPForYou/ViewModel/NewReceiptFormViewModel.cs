@@ -42,6 +42,7 @@ namespace ERPForYou.ViewModel
             set
             {
                 _selectedType = value;
+                _selectedMaterial = "";
                 InitializeMaterials();
             }
         }
@@ -53,7 +54,10 @@ namespace ERPForYou.ViewModel
             set
             {
                 _selectedMaterial = value;
-                ShowUe();
+                if (_selectedMaterial != null)
+                {
+                    ShowUe();
+                }              
             }
         }
 
@@ -150,14 +154,14 @@ namespace ERPForYou.ViewModel
             }
             else
             {
-                _selectedType = "";
+                //_selectedType = "";
                 _quantity = 0;
-                _selectedMaterial = "";
-                _ue = "";
-                OnPropertyChanged("SelectedType");
-                OnPropertyChanged("SelectedMaterial");
+                //_selectedMaterial = "";
+                //_ue = "";
+                //OnPropertyChanged("SelectedType");
+                //OnPropertyChanged("SelectedMaterial");
                 OnPropertyChanged("Quantity");
-                OnPropertyChanged("Ue");
+                //OnPropertyChanged("Ue");
                 MessageBox.Show("Данные введены не полностью или неверно!");
             }
         }

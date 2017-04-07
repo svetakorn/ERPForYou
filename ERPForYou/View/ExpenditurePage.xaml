@@ -21,7 +21,7 @@
         <Label x:Name="expTableLable" Content="Таблица заказов" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Height="32" Width="137" Margin="10,4,0,0"/>
         <DataGrid x:Name="expTable" SelectedItem="{Binding SelectedItem}" ItemsSource="{Binding ZakazList, UpdateSourceTrigger=PropertyChanged}" Margin="10,5" Grid.Row="1"/>
         <Button x:Name="newExpButton" Content="Новый заказ" Margin="10,0,0,11" Grid.Row="2" FontSize="16" Height="45" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="284" Click="newExpButton_Click"/>
-        <Button x:Name="newExpButton1" Content="Удалить выделенный заказ" Command="{Binding DeleteCommand}" Margin="327,0,0,11" Grid.Row="2" FontSize="16" Height="45" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="381"/>
+        <Button x:Name="newExpButton1" Content="Удалить выделенный заказ" Command="{Binding DeleteCommand}" Margin="327,0,10,11" Grid.Row="2" FontSize="16" Height="45" VerticalAlignment="Bottom"/>
 
     </Grid>
 </Page>
